@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- سئو و متادیتا برای موتورهای جستجو و هوش‌های مصنوعی -->
+  <title>نرخ لحظه‌ای تتر در صرافی‌های ایرانی | مقایسه قیمت USDT</title>
+  <meta name="description" content="سامانه مقایسه لحظه‌ای و بلادرنگ نرخ خرید و فروش تتر (USDT) در صرافی‌های ایرانی، نوبیتکس، والکس، آبان‌تتر، تبدیل، رمزینکس و بیت‌پین با به‌روزرسانی خودکار و بالاترین نرخ سود.">
+  <meta name="keywords" content="قیمت تتر, قیمت لحظه ای تتر, خرید تتر, فروش تتر, ارزان ترین تتر, بهترین قیمت تتر, نوبیتکس, والکس, ابان تتر, صرافی ارز دیجیتال">
+  <meta name="robots" content="index, follow">
+  
+  <!-- تگ‌های Open Graph و Twitter Card -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="نرخ لحظه‌ای تتر در صرافی‌های ایرانی | مقایسه قیمت USDT">
+  <meta property="og:description" content="مقایسه زنده بهترین نرخ خرید و فروش تتر در صرافی‌های معتبر ایرانی با به‌روزرسانی خودکار هر ۳۰ ثانیه.">
+  <meta property="og:locale" content="fa_IR">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- نشانه‌گذاری ساختاریافته JSON-LD (Schema.org) برای موتورهای جستجو و هوش مصنوعی -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "FinancialService",
+        "name": "سامانه مقایسه نرخ لحظه‌ای تتر",
+        "description": "تجمیع‌کننده و مقایسه کننده بلادرنگ قیمت خرید و فروش تتر در صرافی‌های ایرانی",
+        "currenciesAccepted": "IRR, TMN, USDT"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "کدام صرافی تتر را با بالاترین قیمت می‌خرد؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "بر اساس جدول لحظه‌ای، صرافی دارای نشان «بهترین قیمت خرید»، بالاترین نرخ ریالی را برای خرید تتر از کاربران پیشنهاد می‌دهد."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "تفاوت نرخ خرید و فروش تتر (اسپرد) چیست؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "اسپرد تفاوت بین نرخی است که صرافی تتر را از شما می‌خرد و قیمتی که آن را به شما می‌فروشد. هرچه این عدد کمتر باشد صرافی نقدشوندگی بالاتری دارد."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    @font-face {
+      font-family: 'IRANSans';
+      font-style: normal;
+      font-weight: 400;
+      src: local('IRANSans'), local('IRANSansX'), local('Vazirmatn'), local('Tahoma');
+    }
+    @font-face {
+      font-family: 'IRANSans';
+      font-style: normal;
+      font-weight: 700;
+      src: local('IRANSans-Bold'), local('IRANSansX-Bold'), local('Vazirmatn-Bold'), local('Tahoma');
+    }
+
+    :root {
+      --font-family: 'IRANSans', 'IRANSansX', 'Vazirmatn', -apple-system, BlinkMacSystemFont, Tahoma, sans-serif;
+      --bg-color: #f8fafc;
+      --surface-color: #ffffff;
+      --surface-subtle: #f1f5f9;
+      --border-color: #e2e8f0;
+      --border-focus: #cbd5e1;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --text-subtle: #94a3b8;
+      
+      --color-emerald-bg: #ecfdf5;
+      --color-emerald-border: #a7f3d0;
+      --color-emerald-text: #065f46;
+      --color-emerald-accent: #059669;
+
+      --color-blue-bg: #eff6ff;
+      --color-blue-border: #bfdbfe;
+      --color-blue-text: #1e40af;
+      --color-blue-accent: #2563eb;
+
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 14px;
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font-family);
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      direction: rtl;
+      line-height: 1.6;
+      font-size: 14px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 24px 16px 64px 16px;
+    }
+
+    .header {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-md);
+      background: #0d9488;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .brand-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .brand-subtitle {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn {
+      font-family: var(--font-family);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 8px 14px;
+      font-size: 13px;
+      font-weight: 500;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-color);
+      background-color: var(--surface-color);
+      color: var(--text-main);
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.15s ease;
+      user-select: none;
+    }
+
+    .btn:hover { background-color: var(--surface-subtle); }
+
+    .btn-sm { padding: 5px 10px; font-size: 12px; }
+
+    .live-status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: var(--text-muted);
+      padding: 4px 10px;
+      background: var(--surface-subtle);
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-color);
+    }
+
+    .live-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #10b981;
+      display: inline-block;
+    }
+
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .highlight-card {
+      background: var(--surface-color);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .highlight-card.card-buy {
+      border-right: 4px solid var(--color-emerald-accent);
+      background: linear-gradient(to left, #ffffff, #f0fdf4);
+    }
+
+    .highlight-card.card-sell {
+      border-right: 4px solid var(--color-blue-accent);
+      background: linear-gradient(to left, #ffffff, #eff6ff);
+    }
+
+    .highlight-label {
+      font-size: 12px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 6px;
+    }
+
+    .highlight-price {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text-main);
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+    }
+
+    .highlight-unit { font-size: 12px; font-weight: 400; color: var(--text-muted); }
+    .highlight-meta { font-size: 12px; margin-top: 4px; font-weight: 500; }
+
+    .control-panel {
+      background: var(--surface-color);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 12px 16px;
+      margin-bottom: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .intent-toggle-group {
+      display: inline-flex;
+      background: var(--surface-subtle);
+      padding: 3px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-color);
+    }
+
+    .intent-btn {
+      font-family: var(--font-family);
+      border: none;
+      background: transparent;
+      padding: 8px 16px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-muted);
+      cursor: pointer;
+      border-radius: 4px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .intent-btn.active {
+      background: #ffffff;
+      color: var(--text-main);
+      font-weight: 700;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    }
+
+    .filter-options {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .sort-select, .search-input {
+      font-family: var(--font-family);
+      padding: 7px 12px;
+      font-size: 13px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-color);
+      background: var(--surface-color);
+      color: var(--text-main);
+      outline: none;
+    }
+
+    .search-input { width: 170px; }
+
+    .refresh-box {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .timer-badge {
+      font-weight: 700;
+      color: var(--text-main);
+      background: var(--surface-subtle);
+      padding: 2px 6px;
+      border-radius: 4px;
+      border: 1px solid var(--border-color);
+      min-width: 24px;
+      text-align: center;
+    }
+
+    .calculator-bar {
+      background: #ffffff;
+      border: 1px dashed var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 10px 16px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      font-size: 13px;
+    }
+
+    .calc-input {
+      font-family: var(--font-family);
+      width: 110px;
+      padding: 5px 8px;
+      font-size: 13px;
+      font-weight: 700;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-color);
+      text-align: center;
+    }
+
+    .calc-highlight { font-weight: 700; color: var(--color-emerald-accent); }
+
+    .table-container {
+      background: var(--surface-color);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+
+    .exchange-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: right;
+    }
+
+    .exchange-table th {
+      background: #f8fafc;
+      padding: 12px 16px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border-color);
+      white-space: nowrap;
+    }
+
+    .exchange-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border-color);
+      vertical-align: middle;
+      font-size: 13px;
+    }
+
+    .exchange-table tbody tr:last-child td { border-bottom: none; }
+    .exchange-table tbody tr:hover { background-color: #fafbfc; }
+
+    .exchange-info { display: flex; align-items: center; gap: 10px; }
+
+    .exchange-logo {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .exchange-title { font-size: 14px; font-weight: 700; color: var(--text-main); }
+    .exchange-en { font-size: 11px; color: var(--text-subtle); direction: ltr; text-align: right; }
+
+    .price-cell { display: flex; flex-direction: column; gap: 2px; }
+    .price-value { font-size: 15px; font-weight: 700; color: var(--text-main); display: flex; gap: 4px; }
+    .price-sub { font-size: 11px; color: var(--text-muted); }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 4px;
+      white-space: nowrap;
+    }
+
+    .badge-best-buy {
+      background: var(--color-emerald-bg);
+      color: var(--color-emerald-text);
+      border: 1px solid var(--color-emerald-border);
+    }
+
+    .badge-best-sell {
+      background: var(--color-blue-bg);
+      color: var(--color-blue-text);
+      border: 1px solid var(--color-blue-border);
+    }
+
+    .badge-spread {
+      background: #f1f5f9;
+      color: var(--text-muted);
+      border: 1px solid var(--border-color);
+    }
+
+    .status-dot-green { width: 6px; height: 6px; border-radius: 50%; background: #10b981; display: inline-block; }
+    .status-dot-red { width: 6px; height: 6px; border-radius: 50%; background: #ef4444; display: inline-block; }
+
+    .mobile-cards { display: none; flex-direction: column; gap: 12px; margin-bottom: 24px; }
+    .m-card {
+      background: var(--surface-color);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 14px;
+      box-shadow: var(--shadow-sm);
+    }
+    .m-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 10px;
+    }
+    .m-card-prices { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+    .m-price-box {
+      background: var(--surface-subtle);
+      border-radius: var(--radius-sm);
+      padding: 10px;
+      border: 1px solid var(--border-color);
+    }
+    .m-price-box.highlighted-buy { background: var(--color-emerald-bg); border-color: var(--color-emerald-border); }
+    .m-price-box.highlighted-sell { background: var(--color-blue-bg); border-color: var(--color-blue-border); }
+    .m-card-footer { display: flex; justify-content: space-between; align-items: center; }
+
+    /* آکاردئون سئو */
+    .seo-section { margin-top: 36px; border-top: 1px solid var(--border-color); padding-top: 28px; }
+    .seo-title { font-size: 18px; font-weight: 700; color: var(--text-main); margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+    .seo-desc { font-size: 13px; color: var(--text-muted); margin-bottom: 20px; line-height: 1.7; }
+    .accordion-list { display: flex; flex-direction: column; gap: 10px; }
+    .accordion-item {
+      background: var(--surface-color);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+    .accordion-summary {
+      padding: 14px 18px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-main);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      list-style: none;
+    }
+    .accordion-summary::-webkit-details-marker { display: none; }
+    .accordion-icon { width: 18px; height: 18px; stroke: var(--text-muted); stroke-width: 2; transition: transform 0.2s ease; }
+    details[open] .accordion-icon { transform: rotate(180deg); }
+    .accordion-content { padding: 0 18px 18px 18px; font-size: 13px; color: #334155; line-height: 1.8; border-top: 1px solid #f1f5f9; margin-top: 4px; }
+    .accordion-content p { margin-top: 12px; }
+    .accordion-content ul, .accordion-content ol { padding-right: 20px; margin-top: 10px; }
+    .accordion-content li { margin-bottom: 6px; }
+
+    .footer { margin-top: 48px; text-align: center; font-size: 12px; color: var(--text-subtle); border-top: 1px solid var(--border-color); padding-top: 20px; }
+
+    @media (max-width: 768px) {
+      .table-container { display: none; }
+      .mobile-cards { display: flex; }
+      .control-panel { flex-direction: column; align-items: stretch; }
+      .intent-toggle-group { width: 100%; }
+      .intent-btn { flex: 1; justify-content: center; }
+      .filter-options { width: 100%; justify-content: space-between; }
+      .search-input { flex: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <header class="header">
+      <div class="header-top">
+        <div class="brand">
+          <div class="brand-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+            </svg>
+          </div>
+          <div>
+            <h1 class="brand-title">نرخ لحظه‌ای تتر (USDT) در صرافی‌های ایرانی</h1>
+            <p class="brand-subtitle">مقایسه زنده بهترین نرخ‌های خرید و فروش با به‌روزرسانی خودکار</p>
+          </div>
+        </div>
+
+        <div class="header-actions">
+          <div class="live-status-pill">
+            <span class="live-dot" id="liveDot"></span>
+            <span id="networkStatusText">متصل به شبکه</span>
+          </div>
+          <button class="btn btn-sm" id="btnManualRefresh">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.19"/>
+            </svg>
+            بروزرسانی
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- کارت‌های برتر بازار -->
+    <section class="highlight-grid">
+      <div class="highlight-card card-buy">
+        <div class="highlight-label">
+          <span>بالاترین نرخ خرید صرافی (گرون‌تر می‌خره)</span>
+          <span class="badge badge-best-buy">بهترین برای فروش</span>
+        </div>
+        <div class="highlight-price" id="topBuyPrice"><span>---,---</span><span class="highlight-unit">تومان</span></div>
+        <div class="highlight-meta" id="topBuyExchange">صرافی: در حال محاسبه...</div>
+      </div>
+
+      <div class="highlight-card card-sell">
+        <div class="highlight-label">
+          <span>کمترین نرخ فروش صرافی (ارزون‌تر می‌فروشه)</span>
+          <span class="badge badge-best-sell">بهترین برای خرید</span>
+        </div>
+        <div class="highlight-price" id="topSellPrice"><span>---,---</span><span class="highlight-unit">تومان</span></div>
+        <div class="highlight-meta" id="topSellExchange">صرافی: در حال محاسبه...</div>
+      </div>
+
+      <div class="highlight-card">
+        <div class="highlight-label">
+          <span>میانگین بازار تتر</span>
+          <span class="badge badge-spread">۸ صرافی</span>
+        </div>
+        <div class="highlight-price" id="avgMarketPrice"><span>---,---</span><span class="highlight-unit">تومان</span></div>
+        <div class="highlight-meta" id="lastUpdatedClock">آخرین دریافت: --:--:--</div>
+      </div>
+    </section>
+
+    <!-- ماشین‌حساب سریع -->
+    <div class="calculator-bar">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <label for="tetherAmount">محاسبه سریع:</label>
+        <input type="number" id="tetherAmount" class="calc-input" value="1000" min="10" step="50">
+        <span>تتر (USDT)</span>
+      </div>
+      <div id="calcSummary">معادل حدوداً <span class="calc-highlight" id="calcTomanResult">---</span> تومان در بهترین صرافی</div>
+    </div>
+
+    <!-- کنترل پنل مرتب‌سازی -->
+    <div class="control-panel">
+      <div class="intent-toggle-group">
+        <button class="intent-btn active" id="btnIntentSell">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+            <polyline points="17 6 23 6 23 12"/>
+          </svg>
+          می‌خواهم بفروشم (بالاترین نرخ خرید)
+        </button>
+        <button class="intent-btn" id="btnIntentBuy">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="23 18 13.5 8.5 8.5 13.5 1 6"/>
+            <polyline points="17 18 23 18 23 12"/>
+          </svg>
+          می‌خواهم بخرم (کمترین نرخ فروش)
+        </button>
+      </div>
+
+      <div class="filter-options">
+        <input type="text" id="searchInput" class="search-input" placeholder="جستجوی صرافی...">
+        <select id="sortSelect" class="sort-select">
+          <option value="highest_buy">بیشترین نرخ خرید صرافی (پیش‌فرض)</option>
+          <option value="lowest_sell">کمترین نرخ فروش صرافی</option>
+          <option value="lowest_spread">کمترین اختلاف قیمت (اسپرد)</option>
+          <option value="name">بر اساس نام صرافی</option>
+        </select>
+        <div class="refresh-box">
+          <span>بروزرسانی خودکار:</span>
+          <span class="timer-badge" id="timerCount">۳۰</span>
+          <span>ثانیه</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- جدول دسکتاپ -->
+    <div class="table-container">
+      <table class="exchange-table">
+        <thead>
+          <tr>
+            <th>نام صرافی</th>
+            <th>نرخ خرید صرافی (شما می‌فروشید)</th>
+            <th>نرخ فروش صرافی (شما می‌خرید)</th>
+            <th>اختلاف قیمت (اسپرد)</th>
+            <th>وضعیت</th>
+            <th>معامله مستقیم</th>
+          </tr>
+        </thead>
+        <tbody id="exchangeTableBody">
+          <tr><td colspan="6" style="text-align: center; padding: 30px; color: var(--text-muted);">در حال دریافت داده‌ها...</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- کارت‌های موبایل -->
+    <div class="mobile-cards" id="mobileCardsContainer"></div>
+
+    <!-- تب‌های آکاردئونی سئو و موتورهای هوش مصنوعی -->
+    <section class="seo-section">
+      <h2 class="seo-title">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/>
+        </svg>
+        راهنمای جامع خرید، فروش و مقایسه نرخ لحظه‌ای تتر
+      </h2>
+      <p class="seo-desc">
+        تتر (Tether با نماد USDT) پراستفاده‌ترین رمزارز با پشتوانه دلار در ایران است. با مقایسه لحظه‌ای نرخ‌ها در جدول فوق، می‌توانید بیشترین بازدهی مالی را از معاملات تتر کسب کنید.
+      </p>
+
+      <div class="accordion-list">
+        <details class="accordion-item" open>
+          <summary class="accordion-summary">
+            <span>۱. معیارهای انتخاب بهترین صرافی ایرانی برای معامله تتر</span>
+            <svg class="accordion-icon" viewBox="0 0 24 24" fill="none"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="accordion-content">
+            <p>هنگام انتخاب صرافی برای تبدیل تتر، به نکات زیر دقت کنید:</p>
+            <ul>
+              <li><strong>عمق سفارش‌ها:</strong> صرافی‌هایی نظیر نوبیتکس، والکس و آبان‌تتر بالاترین حجم معاملات را دارند و سفارش‌های سنگین بدون لغزش قیمت انجام می‌شوند.</li>
+              <li><strong>نرخ واقعی خرید صرافی:</strong> هنگام فروش تتر، صرافی‌ای با برچسب <em>«بالاترین قیمت خرید»</em> بیشترین تومان را به حساب شما واریز می‌کند.</li>
+              <li><strong>سرعت تسویه ریالی:</strong> پشتیبانی از سیکل‌های منظم پایا و ساتنا جهت واریز سریع ریال به حساب بانکی.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="accordion-item">
+          <summary class="accordion-summary">
+            <span>۲. مفهوم اسپرد (Spread) و چرایی اختلاف قیمت بین صرافی‌ها</span>
+            <svg class="accordion-icon" viewBox="0 0 24 24" fill="none"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="accordion-content">
+            <p>اسپرد تفاوت بین قیمت خرید صرافی از شما و قیمت فروش صرافی به شماست. اختلاف قیمت بین صرافی‌های مختلف به علت تفاوت در میزان عرضه و تقاضای لحظه‌ای در هر بازار به وجود می‌آید که معامله‌گران از آن برای فرصت‌های آربیتراژ بهره می‌برند.</p>
+          </div>
+        </details>
+
+        <details class="accordion-item">
+          <summary class="accordion-summary">
+            <span>۳. مقایسه شبکه‌های انتقال تتر (TRC-20، BEP-20، TON، Polygon)</span>
+            <svg class="accordion-icon" viewBox="0 0 24 24" fill="none"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="accordion-content">
+            <ul>
+              <li><strong>شبکه TRC-20 (ترون):</strong> دارای بالاترین سازگاری در تمامی صرافی‌های ایرانی؛ کارمزد آن معمولاً بین ۱ تا ۲ دلار است.</li>
+              <li><strong>شبکه BEP-20 (بایننس چین):</strong> سرعت بسیار بالا با کارمزدی حدود ۰.۳ دلار.</li>
+              <li><strong>شبکه TON (تلگرام):</strong> جدیدترین شبکه رسمی با کارمزد کمتر از ۰.۱ دلار و سرعت تسویه زیر ۵ ثانیه.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="accordion-item">
+          <summary class="accordion-summary">
+            <span>۴. نکات امنیتی و نگهداری تتر در کیف پول شخصی</span>
+            <svg class="accordion-icon" viewBox="0 0 24 24" fill="none"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="accordion-content">
+            <p>برای مبالغ میان‌مدت و بلندمدت، تترهای خود را به کیف پول‌های غیرحضانتی مانند Trust Wallet منتقل کنید و رمز عبور دو مرحله‌ای (Google Authenticator) را روی تمامی حساب‌های صرافی فعال نمایید.</p>
+          </div>
+        </details>
+
+        <details class="accordion-item">
+          <summary class="accordion-summary">
+            <span>۵. سوالات متداول (FAQ)</span>
+            <svg class="accordion-icon" viewBox="0 0 24 24" fill="none"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="accordion-content">
+            <p><strong>حداقل مبلغ خرید تتر چقدر است؟</strong> در اکثر صرافی‌های ایرانی حداقل مبلغ خرید معادل ۵ الی ۱۰ تتر (حدود ۵۰۰ هزار تومان) است.</p>
+            <p><strong>سقف واریز ریالی با کارت بانکی چقدر است؟</strong> طبق قوانین شاپرک، روزانه تا سقف ۲۵ میلیون تومان با هر شماره کارت بانکی امکان پرداخت آنلاین وجود دارد و مبالغ بالاتر با شناسه واریز بانکی صورت می‌گیرد.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>طراحی شده برای Cloudflare Pages و Cloudflare Workers با کش هوشمند و به‌روزرسانی لحظه‌ای</p>
+    </footer>
+
+  </div>
+
+  <script>
+    // =========================================================================
+    // ⚡ پیکربندی آدرس ورکر کلودفلر (Cloudflare Worker URL)
+    // 
+    // پس از ساخت و دیپلوی ورکر در Cloudflare Workers، آدرس ساب‌دامین اختصاصی
+    // ورکر خود را در متغیر زیر قرار دهید. به عنوان مثال:
+    // const WORKER_URL = 'https://tether-worker.your-subdomain.workers.dev';
+    // 
+    // نکته: در صورتی که این متغیر خالی بماند ('')، برنامه به طور خودکار از
+    // اندپوینت محلی یا مقادیر پشتیبان لحظه‌ای استفاده می‌کند تا صفحه بدون خطا نمایش داده شود.
+    // =========================================================================
+    const WORKER_URL = '';
+
+    let exchangesData = [];
+    let currentIntent = 'sell';
+    let currentSort = 'highest_buy';
+    let searchQuery = '';
+    let refreshSecondsLeft = 30;
+    let refreshTimer = null;
+    let isLoading = false;
+
+    const exchangeTableBody = document.getElementById('exchangeTableBody');
+    const mobileCardsContainer = document.getElementById('mobileCardsContainer');
+    const timerCountEl = document.getElementById('timerCount');
+    const btnManualRefresh = document.getElementById('btnManualRefresh');
+    const searchInput = document.getElementById('searchInput');
+    const sortSelect = document.getElementById('sortSelect');
+    const btnIntentSell = document.getElementById('btnIntentSell');
+    const btnIntentBuy = document.getElementById('btnIntentBuy');
+    const tetherAmountInput = document.getElementById('tetherAmount');
+    const calcSummary = document.getElementById('calcSummary');
+
+    const topBuyPriceEl = document.getElementById('topBuyPrice');
+    const topBuyExchangeEl = document.getElementById('topBuyExchange');
+    const topSellPriceEl = document.getElementById('topSellPrice');
+    const topSellExchangeEl = document.getElementById('topSellExchange');
+    const avgMarketPriceEl = document.getElementById('avgMarketPrice');
+    const lastUpdatedClockEl = document.getElementById('lastUpdatedClock');
+    const liveDotEl = document.getElementById('liveDot');
+    const networkStatusTextEl = document.getElementById('networkStatusText');
+
+    const faNumber = new Intl.NumberFormat('fa-IR');
+
+    function formatToman(num) {
+      if (!num || isNaN(num)) return '---';
+      return faNumber.format(Math.round(num));
+    }
+
+    async function fetchRates() {
+      if (isLoading) return;
+      isLoading = true;
+      btnManualRefresh.disabled = true;
+
+      let targetUrl = WORKER_URL && WORKER_URL.trim() !== '' ? WORKER_URL : '/api/tether-rates';
+
+      try {
+        const response = await fetch(targetUrl, { headers: { 'Accept': 'application/json' } });
+        if (!response.ok) throw new Error('Network error');
+        const json = await response.json();
+        if (json && json.data) {
+          exchangesData = json.data;
+          updateSummaryMetrics();
+          render();
+          liveDotEl.style.backgroundColor = '#10b981';
+          networkStatusTextEl.textContent = json.cached ? 'پاسخ سریع (کش کلودفلر)' : 'بروزرسانی لحظه‌ای';
+        }
+      } catch (err) {
+        loadFallbackRates();
+      } finally {
+        isLoading = false;
+        btnManualRefresh.disabled = false;
+        refreshSecondsLeft = 30;
+      }
+    }
+
+    function loadFallbackRates() {
+      const base = 94850;
+      exchangesData = [
+        { id: 'nobitex', name: 'نوبیتکس', enName: 'Nobitex', logoColor: '#4338ca', buyPrice: base + 140, sellPrice: base + 280, status: 'online', tradeUrl: 'https://nobitex.ir' },
+        { id: 'wallex', name: 'والکس', enName: 'Wallex', logoColor: '#0284c7', buyPrice: base - 20, sellPrice: base + 70, status: 'online', tradeUrl: 'https://wallex.ir' },
+        { id: 'ramzinex', name: 'رمزینکس', enName: 'Ramzinex', logoColor: '#ea580c', buyPrice: base + 90, sellPrice: base + 210, status: 'online', tradeUrl: 'https://ramzinex.com' },
+        { id: 'abantether', name: 'آبان‌تتر', enName: 'Aban Tether', logoColor: '#059669', buyPrice: base + 180, sellPrice: base + 320, status: 'online', tradeUrl: 'https://abantether.com' },
+        { id: 'tabdeal', name: 'تبدیل', enName: 'Tabdeal', logoColor: '#7c3aed', buyPrice: base - 80, sellPrice: base - 30, status: 'online', tradeUrl: 'https://tabdeal.org' },
+        { id: 'bitpin', name: 'بیت‌پین', enName: 'Bitpin', logoColor: '#16a34a', buyPrice: base + 50, sellPrice: base + 160, status: 'online', tradeUrl: 'https://bitpin.ir' },
+        { id: 'exir', name: 'اکسیر', enName: 'Exir', logoColor: '#2563eb', buyPrice: base - 110, sellPrice: base + 120, status: 'online', tradeUrl: 'https://exir.io' },
+        { id: 'sarmayex', name: 'سرمایکس', enName: 'Sarmayex', logoColor: '#d97706', buyPrice: base + 30, sellPrice: base + 240, status: 'online', tradeUrl: 'https://sarmayex.com' },
+      ];
+      updateSummaryMetrics();
+      render();
+      liveDotEl.style.backgroundColor = '#f59e0b';
+      networkStatusTextEl.textContent = 'داده‌های پشتیبان فعال است';
+    }
+
+    function updateSummaryMetrics() {
+      if (!exchangesData.length) return;
+      const active = exchangesData.filter(e => e.buyPrice > 0 && e.status === 'online');
+      if (!active.length) return;
+
+      const bestBuy = [...active].sort((a, b) => b.buyPrice - a.buyPrice)[0];
+      const bestSell = [...active].filter(e => e.sellPrice > 0).sort((a, b) => a.sellPrice - b.sellPrice)[0];
+      const avg = Math.round(active.reduce((acc, curr) => acc + curr.buyPrice, 0) / active.length);
+
+      if (bestBuy) {
+        topBuyPriceEl.innerHTML = `<span>${formatToman(bestBuy.buyPrice)}</span><span class="highlight-unit">تومان</span>`;
+        topBuyExchangeEl.textContent = `صرافی: ${bestBuy.name}`;
+      }
+      if (bestSell) {
+        topSellPriceEl.innerHTML = `<span>${formatToman(bestSell.sellPrice)}</span><span class="highlight-unit">تومان</span>`;
+        topSellExchangeEl.textContent = `صرافی: ${bestSell.name}`;
+      }
+      avgMarketPriceEl.innerHTML = `<span>${formatToman(avg)}</span><span class="highlight-unit">تومان</span>`;
+      lastUpdatedClockEl.textContent = 'آخرین دریافت: ' + new Date().toLocaleTimeString('fa-IR');
+
+      const amount = parseFloat(tetherAmountInput.value) || 0;
+      if (currentIntent === 'sell') {
+        const rate = bestBuy ? bestBuy.buyPrice : 94900;
+        calcSummary.innerHTML = `با فروش ${faNumber.format(amount)} تتر در <strong>${bestBuy?.name || 'بهترین صرافی'}</strong> مبلغ <span class="calc-highlight">${formatToman(amount * rate)} تومان</span> دریافت می‌کنید.`;
+      } else {
+        const rate = bestSell ? bestSell.sellPrice : 95100;
+        calcSummary.innerHTML = `برای خرید ${faNumber.format(amount)} تتر از <strong>${bestSell?.name || 'ارزان‌ترین صرافی'}</strong> مبلغ <span class="calc-highlight">${formatToman(amount * rate)} تومان</span> نیاز دارید.`;
+      }
+    }
+
+    function render() {
+      if (!exchangesData.length) return;
+
+      let list = exchangesData.filter(ex => {
+        if (!searchQuery) return true;
+        const q = searchQuery.toLowerCase().trim();
+        return ex.name.toLowerCase().includes(q) || (ex.enName && ex.enName.toLowerCase().includes(q));
+      });
+
+      const activeAll = exchangesData.filter(e => e.buyPrice > 0 && e.status === 'online');
+      const maxBuyPrice = Math.max(...activeAll.map(e => e.buyPrice), 0);
+      const minSellPrice = Math.min(...activeAll.filter(e => e.sellPrice > 0).map(e => e.sellPrice), Infinity);
+
+      list.sort((a, b) => {
+        if (currentSort === 'highest_buy') return b.buyPrice - a.buyPrice;
+        if (currentSort === 'lowest_sell') return a.sellPrice - b.sellPrice;
+        if (currentSort === 'lowest_spread') return Math.abs(a.sellPrice - a.buyPrice) - Math.abs(b.sellPrice - b.buyPrice);
+        if (currentSort === 'name') return a.name.localeCompare(b.name, 'fa');
+        return b.buyPrice - a.buyPrice;
+      });
+
+      let tableHtml = '';
+      let cardsHtml = '';
+
+      list.forEach(ex => {
+        const isBestBuy = ex.buyPrice === maxBuyPrice && ex.buyPrice > 0;
+        const isBestSell = ex.sellPrice === minSellPrice && ex.sellPrice > 0;
+        const spread = ex.sellPrice && ex.buyPrice ? Math.abs(ex.sellPrice - ex.buyPrice) : 0;
+        const initial = ex.enName ? ex.enName.charAt(0) : ex.name.charAt(0);
+
+        let badges = '';
+        if (isBestBuy) badges += `<span class="badge badge-best-buy">★ بالاترین قیمت خرید</span> `;
+        if (isBestSell) badges += `<span class="badge badge-best-sell">★ کمترین قیمت فروش</span>`;
+
+        tableHtml += `
+          <tr>
+            <td>
+              <div class="exchange-info">
+                <div class="exchange-logo" style="background-color: ${ex.logoColor || '#334155'};">${initial}</div>
+                <div><span class="exchange-title">${ex.name}</span><div class="exchange-en">${ex.enName || ''}</div></div>
+              </div>
+            </td>
+            <td>
+              <div class="price-cell">
+                <span class="price-value" style="${isBestBuy ? 'color: var(--color-emerald-accent);' : ''}">${formatToman(ex.buyPrice)} تومان</span>
+                <span class="price-sub">صرافی می‌خرد</span>
+              </div>
+            </td>
+            <td>
+              <div class="price-cell">
+                <span class="price-value" style="${isBestSell ? 'color: var(--color-blue-accent);' : ''}">${formatToman(ex.sellPrice)} تومان</span>
+                <span class="price-sub">صرافی می‌فروشد</span>
+              </div>
+            </td>
+            <td><span class="badge badge-spread">${formatToman(spread)} تومان</span></td>
+            <td>
+              <span class="status-dot-${ex.status === 'online' ? 'green' : 'red'}"></span>
+              <span style="font-size: 11px;">${ex.status === 'online' ? 'پایدار' : 'آفلاین'}</span>
+              ${badges ? `<div style="margin-top: 4px;">${badges}</div>` : ''}
+            </td>
+            <td>
+              <a href="${ex.tradeUrl || '#'}" target="_blank" rel="noopener noreferrer" class="btn btn-sm">ورود به معامله</a>
+            </td>
+          </tr>
+        `;
+
+        cardsHtml += `
+          <div class="m-card">
+            <div class="m-card-header">
+              <div class="exchange-info">
+                <div class="exchange-logo" style="background-color: ${ex.logoColor || '#334155'};">${initial}</div>
+                <span class="exchange-title">${ex.name}</span>
+              </div>
+              <div>${badges}</div>
+            </div>
+            <div class="m-card-prices">
+              <div class="m-price-box ${isBestBuy ? 'highlighted-buy' : ''}">
+                <div style="font-size: 11px; color: var(--text-muted);">نرخ خرید صرافی</div>
+                <div style="font-size: 16px; font-weight: 700;">${formatToman(ex.buyPrice)} تومان</div>
+              </div>
+              <div class="m-price-box ${isBestSell ? 'highlighted-sell' : ''}">
+                <div style="font-size: 11px; color: var(--text-muted);">نرخ فروش صرافی</div>
+                <div style="font-size: 16px; font-weight: 700;">${formatToman(ex.sellPrice)} تومان</div>
+              </div>
+            </div>
+            <div class="m-card-footer">
+              <span style="font-size: 11px; color: var(--text-muted);">اسپرد: ${formatToman(spread)} تومان</span>
+              <a href="${ex.tradeUrl || '#'}" target="_blank" rel="noopener noreferrer" class="btn btn-sm">صفحه صرافی</a>
+            </div>
+          </div>
+        `;
+      });
+
+      exchangeTableBody.innerHTML = tableHtml;
+      mobileCardsContainer.innerHTML = cardsHtml;
+    }
+
+    function handleIntentChange(intent) {
+      currentIntent = intent;
+      if (intent === 'sell') {
+        btnIntentSell.classList.add('active');
+        btnIntentBuy.classList.remove('active');
+        currentSort = 'highest_buy';
+        sortSelect.value = 'highest_buy';
+      } else {
+        btnIntentBuy.classList.add('active');
+        btnIntentSell.classList.remove('active');
+        currentSort = 'lowest_sell';
+        sortSelect.value = 'lowest_sell';
+      }
+      render();
+      updateSummaryMetrics();
+    }
+
+    btnIntentSell.addEventListener('click', () => handleIntentChange('sell'));
+    btnIntentBuy.addEventListener('click', () => handleIntentChange('buy'));
+
+    sortSelect.addEventListener('change', (e) => {
+      currentSort = e.target.value;
+      if (currentSort === 'highest_buy') {
+        btnIntentSell.classList.add('active');
+        btnIntentBuy.classList.remove('active');
+        currentIntent = 'sell';
+      } else if (currentSort === 'lowest_sell') {
+        btnIntentBuy.classList.add('active');
+        btnIntentSell.classList.remove('active');
+        currentIntent = 'buy';
+      }
+      render();
+    });
+
+    searchInput.addEventListener('input', (e) => {
+      searchQuery = e.target.value;
+      render();
+    });
+
+    tetherAmountInput.addEventListener('input', () => updateSummaryMetrics());
+    btnManualRefresh.addEventListener('click', () => fetchRates());
+
+    function startCountdown() {
+      if (refreshTimer) clearInterval(refreshTimer);
+      refreshTimer = setInterval(() => {
+        refreshSecondsLeft--;
+        if (refreshSecondsLeft <= 0) {
+          refreshSecondsLeft = 30;
+          fetchRates();
+        }
+        timerCountEl.textContent = faNumber.format(refreshSecondsLeft);
+      }, 1000);
+    }
+
+    fetchRates();
+    startCountdown();
+  </script>
+</body>
+</html>

@@ -4,16 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <!-- سئو و متادیتا صرافی‌سنج برای موتورهای جستجو و هوش مصنوعی (SEO & GEO) -->
-  <title>صرافی‌سنج | مقایسه لحظه‌ای نرخ تتر (USDT) در صرافی‌های ایرانی</title>
-  <meta name="description" content="صرافی‌سنج؛ دیده‌بان و رتبه‌بندی لحظه‌ای نرخ خرید و فروش تتر (USDT) در ۱۵ صرافی معتبر ایرانی با نمایش بهترین خریدار، ارزان‌ترین فروشنده و کمترین کارمزد.">
-  <meta name="keywords" content="صرافی سنج, sarafisanj, قیمت تتر, نرخ لحظه ای تتر, ارزان ترین تتر, بالاترین قیمت خرید تتر, نوبیتکس, والکس, او ام پی فینکس, تترلند, آبان تتر">
+  <!-- سئو و متادیتا صرافی‌سنج (SEO & GEO Meta Tags) -->
+  <title>صرافی‌سنج | رصد، مقایسه و رتبه‌بندی لحظه‌ای نرخ تتر (USDT) در صرافی‌های ایران</title>
+  <meta name="description" content="صرافی‌سنج؛ مرجع هوشمند دیده‌بان و رتبه‌بندی لحظه‌ای قیمت خرید و فروش تتر (USDT) در ۱۵ صرافی معتبر ایرانی با نمایش بالاترین خریدار، ارزان‌ترین فروشنده، سود آربیتراژ و کمترین اسپرد.">
+  <meta name="keywords" content="صرافی سنج, sarafisanj, قیمت تتر, نرخ لحظه ای تتر, ارزان ترین تتر, بالاترین قیمت خرید تتر, نوبیتکس, والکس, او ام پی فینکس, تترلند, آبان تتر, آربیتراژ تتر">
   <meta name="robots" content="index, follow">
   
+  <!-- فونت وزیرمتن با تمامی اوزان از سرور گوگل -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
   <!-- تگ‌های Open Graph و Twitter Card -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="صرافی‌سنج | مقایسه لحظه‌ای نرخ تتر در صرافی‌های ایرانی">
-  <meta property="og:description" content="سامانه صرافی‌سنج؛ رصد بلادرنگ قیمت خرید و فروش تتر در صرافی‌های معتبر ایران با به‌روزرسانی خودکار هر ۳۰ ثانیه.">
+  <meta property="og:title" content="صرافی‌سنج | رصد و مقایسه لحظه‌ای نرخ تتر در صرافی‌های ایران">
+  <meta property="og:description" content="مرجع هوشمند مقایسه لحظه‌ای قیمت خرید و فروش تتر در صرافی‌های معتبر ایرانی با کش ۲۵ ثانیه‌ای و رتبه‌بندی شفاف.">
   <meta property="og:locale" content="fa_IR">
   <meta property="og:site_name" content="صرافی‌سنج (SarafiSanj)">
   <meta name="twitter:card" content="summary_large_image">
@@ -81,9 +86,6 @@
   </script>
 
   <style>
-    /* ایمپورت فونت وب استاندارد وزیرمتن با تمام ضخامت‌ها برای حداکثر وضوح */
-    @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap');
-
     @font-face {
       font-family: 'IRANSans';
       font-style: normal;
@@ -103,38 +105,95 @@
       src: local('IRANSans-Black'), local('IRANSansX-Black'), local('Vazirmatn-Black'), local('Tahoma');
     }
 
+    /* پالت رنگی حرفه‌ای فین‌تک (Fintech Pro Color System) */
     :root {
       --font-family: 'Vazirmatn', 'IRANSans', 'IRANSansX', -apple-system, BlinkMacSystemFont, Tahoma, sans-serif;
+      
       --bg-color: #f8fafc;
+      --bg-subtle: #f1f5f9;
       --surface-color: #ffffff;
-      --surface-subtle: #f1f5f9;
-      --border-color: #cbd5e1;
-      --border-strong: #94a3b8;
+      --surface-elevated: #ffffff;
+      --surface-muted: #f8fafc;
+      --border-color: #e2e8f0;
+      --border-strong: #cbd5e1;
       
       --text-main: #090d16;
       --text-body: #1e293b;
-      --text-muted: #475569;
-      --text-subtle: #64748b;
+      --text-muted: #64748b;
+      --text-subtle: #94a3b8;
       
-      --brand-primary: #0f766e;
-      --brand-accent: #0d9488;
-      --brand-glow: #14b8a6;
+      --brand-teal: #0d9488;
+      --brand-teal-dark: #0f766e;
+      --brand-teal-light: #ccfbf1;
+      --brand-accent: #0284c7;
 
-      --color-emerald-bg: #ecfdf5;
-      --color-emerald-border: #6ee7b7;
-      --color-emerald-text: #064e3b;
-      --color-emerald-accent: #059669;
+      --color-buy: #059669;
+      --color-buy-hover: #047857;
+      --color-buy-bg: #ecfdf5;
+      --color-buy-border: #a7f3d0;
+      --color-buy-glow: rgba(16, 185, 129, 0.15);
 
-      --color-blue-bg: #eff6ff;
-      --color-blue-border: #93c5fd;
-      --color-blue-text: #1e3a8a;
-      --color-blue-accent: #2563eb;
+      --color-sell: #2563eb;
+      --color-sell-hover: #1d4ed8;
+      --color-sell-bg: #eff6ff;
+      --color-sell-border: #bfdbfe;
+      --color-sell-glow: rgba(37, 99, 235, 0.15);
 
-      --radius-sm: 6px;
-      --radius-md: 10px;
-      --radius-lg: 14px;
-      --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.08);
-      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+      --color-arbitrage: #7c3aed;
+      --color-arbitrage-bg: #f5f3ff;
+      --color-arbitrage-border: #ddd6fe;
+
+      --radius-xs: 4px;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 20px;
+      
+      --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.06), 0 1px 2px 0 rgba(0, 0, 0, 0.04);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.09), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.06);
+    }
+
+    /* حالت دارک‌مود پیشرفته و تیره باکلاس (High-End Dark Mode) */
+    body.dark-theme {
+      --bg-color: #0b0f19;
+      --bg-subtle: #111827;
+      --surface-color: #151d30;
+      --surface-elevated: #1e293b;
+      --surface-muted: #131b2e;
+      --border-color: #1e293b;
+      --border-strong: #334155;
+      
+      --text-main: #f8fafc;
+      --text-body: #e2e8f0;
+      --text-muted: #94a3b8;
+      --text-subtle: #64748b;
+
+      --brand-teal-light: rgba(13, 148, 136, 0.2);
+
+      --color-buy: #10b981;
+      --color-buy-hover: #34d399;
+      --color-buy-bg: rgba(16, 185, 129, 0.12);
+      --color-buy-border: rgba(16, 185, 129, 0.28);
+      --color-buy-glow: rgba(16, 185, 129, 0.25);
+
+      --color-sell: #38bdf8;
+      --color-sell-hover: #7dd3fc;
+      --color-sell-bg: rgba(56, 189, 248, 0.12);
+      --color-sell-border: rgba(56, 189, 248, 0.28);
+      --color-sell-glow: rgba(56, 189, 248, 0.25);
+
+      --color-arbitrage: #a78bfa;
+      --color-arbitrage-bg: rgba(167, 139, 250, 0.12);
+      --color-arbitrage-border: rgba(167, 139, 250, 0.28);
+
+      --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+      --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.6);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.7);
+      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.85);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -149,22 +208,24 @@
       font-weight: 500;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+      transition: background-color 0.2s ease, color 0.2s ease;
+      background-image: 
+        radial-gradient(circle at 15% 10%, rgba(13, 148, 136, 0.04) 0%, transparent 40%),
+        radial-gradient(circle at 85% 15%, rgba(37, 99, 235, 0.04) 0%, transparent 40%);
+      background-repeat: no-repeat;
     }
 
     .container {
-      max-width: 1180px;
+      max-width: 1240px;
       margin: 0 auto;
-      padding: 24px 16px 64px 16px;
+      padding: 24px 20px 80px 20px;
     }
 
     /* -------------------------------------------------------------
-       هدر اختصاصی صرافی‌سنج
+       هدر حرفه‌ای و مینیمال صرافی‌سنج (Fintech Header)
        ------------------------------------------------------------- */
     .header {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
     }
 
     .header-top {
@@ -172,28 +233,43 @@
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 16px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border-color);
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
     }
 
-    /* نشان و لوگوی اختصاصی صرافی‌سنج */
+    /* نشان و آرم اختصاصی صرافی‌سنج */
     .brand-logo-wrap {
-      width: 48px;
-      height: 48px;
+      width: 52px;
+      height: 52px;
       border-radius: var(--radius-md);
-      background: linear-gradient(135deg, #0f766e 0%, #0d9488 50%, #06b6d4 100%);
+      background: linear-gradient(135deg, #047857 0%, #0d9488 45%, #0284c7 100%);
       color: #ffffff;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
-      box-shadow: 0 4px 10px rgba(13, 148, 136, 0.35);
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 8px 18px rgba(13, 148, 136, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .brand-logo-wrap::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 60%);
+      pointer-events: none;
     }
 
     .brand-title-group {
@@ -202,37 +278,43 @@
     }
 
     .brand-title {
-      font-size: 24px;
+      font-size: 26px;
       font-weight: 900;
       color: var(--text-main);
       letter-spacing: -0.03em;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
       line-height: 1.2;
     }
 
     .brand-badge {
       font-size: 11px;
       font-weight: 800;
-      padding: 2px 7px;
-      background: #ccfbf1;
-      color: #0f766e;
-      border-radius: 4px;
-      border: 1px solid #99f6e4;
+      padding: 3px 9px;
+      background: var(--brand-teal-light);
+      color: var(--brand-teal-dark);
+      border-radius: var(--radius-xs);
+      border: 1px solid rgba(13, 148, 136, 0.3);
+      letter-spacing: 0;
+    }
+
+    body.dark-theme .brand-badge {
+      color: #5eead4;
     }
 
     .brand-subtitle {
-      font-size: 12.5px;
+      font-size: 13px;
       font-weight: 600;
       color: var(--text-muted);
-      margin-top: 3px;
+      margin-top: 4px;
     }
 
     .header-actions {
       display: flex;
       align-items: center;
       gap: 10px;
+      flex-wrap: wrap;
     }
 
     .btn {
@@ -241,7 +323,7 @@
       align-items: center;
       justify-content: center;
       gap: 6px;
-      padding: 8px 14px;
+      padding: 9px 16px;
       font-size: 13px;
       font-weight: 700;
       border-radius: var(--radius-sm);
@@ -250,87 +332,144 @@
       color: var(--text-main);
       cursor: pointer;
       text-decoration: none;
-      transition: background-color 0.15s ease, border-color 0.15s ease;
+      transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
       user-select: none;
+      box-shadow: var(--shadow-xs);
     }
 
-    .btn:hover { background-color: var(--surface-subtle); border-color: var(--border-strong); }
-    .btn-sm { padding: 6px 12px; font-size: 12.5px; }
+    .btn:hover {
+      background-color: var(--bg-subtle);
+      border-color: var(--border-strong);
+      box-shadow: var(--shadow-sm);
+    }
+    .btn:active { transform: scale(0.98); }
+    .btn-sm { padding: 7px 13px; font-size: 12.5px; }
 
     .live-status-pill {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      font-size: 12px;
+      gap: 8px;
+      font-size: 12.5px;
       font-weight: 700;
-      color: var(--text-muted);
-      padding: 5px 12px;
-      background: var(--surface-subtle);
+      color: var(--text-body);
+      padding: 8px 14px;
+      background: var(--surface-color);
       border-radius: var(--radius-sm);
       border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-xs);
     }
 
     .live-dot {
-      width: 8px;
-      height: 8px;
+      width: 9px;
+      height: 9px;
       border-radius: 50%;
       background-color: #10b981;
       display: inline-block;
-      box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
+      animation: pulse-dot 2s infinite ease-in-out;
     }
 
-    /* نوار سنجشگر وضعیت بازار صرافی‌سنج (Market Gauge Banner) */
-    .market-gauge-bar {
-      background: linear-gradient(90deg, #f0fdfa 0%, #ffffff 50%, #f8fafc 100%);
-      border: 1px solid #99f6e4;
+    @keyframes pulse-dot {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.25); opacity: 0.7; }
+    }
+
+    /* نوار تیکر و اطلاع‌رسانی وضعیت بازار (Market Ticker Bar) */
+    .market-ticker-bar {
+      background: var(--surface-color);
+      border: 1px solid var(--border-color);
       border-radius: var(--radius-md);
-      padding: 10px 16px;
-      margin-bottom: 18px;
+      padding: 12px 20px;
+      margin-top: 18px;
+      margin-bottom: 22px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
-      gap: 10px;
-      font-size: 12.5px;
+      gap: 14px;
+      font-size: 13px;
       font-weight: 600;
-      color: #0f766e;
+      box-shadow: var(--shadow-xs);
     }
 
-    .gauge-item {
+    .ticker-item {
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
     }
 
-    .gauge-item strong {
+    .ticker-item strong {
       color: var(--text-main);
       font-weight: 800;
+      font-variant-numeric: tabular-nums;
     }
 
-    /* کارت‌های برتر بازار */
+    .ticker-icon {
+      color: var(--brand-teal);
+      display: inline-flex;
+      align-items: center;
+    }
+
+    /* -------------------------------------------------------------
+       کارت‌های چهارگانه تحلیلی بازار (Market Highlight Cards)
+       ------------------------------------------------------------- */
     .highlight-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 14px;
-      margin-bottom: 20px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    @media (max-width: 1080px) {
+      .highlight-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .highlight-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     .highlight-card {
       background: var(--surface-color);
       border: 1px solid var(--border-color);
       border-radius: var(--radius-md);
-      padding: 16px;
+      padding: 18px 20px;
       box-shadow: var(--shadow-sm);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .highlight-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--border-strong);
     }
 
     .highlight-card.card-buy {
-      border-right: 5px solid var(--color-emerald-accent);
-      background: linear-gradient(to left, #ffffff, #f0fdf4);
+      border-top: 4px solid var(--color-buy);
+      background: linear-gradient(180deg, var(--color-buy-bg) 0%, var(--surface-color) 45%);
     }
 
     .highlight-card.card-sell {
-      border-right: 5px solid var(--color-blue-accent);
-      background: linear-gradient(to left, #ffffff, #eff6ff);
+      border-top: 4px solid var(--color-sell);
+      background: linear-gradient(180deg, var(--color-sell-bg) 0%, var(--surface-color) 45%);
+    }
+
+    .highlight-card.card-avg {
+      border-top: 4px solid var(--brand-teal);
+      background: linear-gradient(180deg, rgba(13, 148, 136, 0.08) 0%, var(--surface-color) 45%);
+    }
+
+    .highlight-card.card-arbitrage {
+      border-top: 4px solid var(--color-arbitrage);
+      background: linear-gradient(180deg, var(--color-arbitrage-bg) 0%, var(--surface-color) 45%);
     }
 
     .highlight-label {
@@ -340,42 +479,203 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 6px;
+      margin-bottom: 10px;
     }
 
     .highlight-price {
-      font-size: 26px;
+      font-size: 28px;
       font-weight: 900;
       color: var(--text-main);
       display: flex;
       align-items: baseline;
-      gap: 5px;
+      gap: 6px;
       font-variant-numeric: tabular-nums;
-      line-height: 1.2;
+      line-height: 1.15;
+      margin-bottom: 8px;
     }
 
     .highlight-unit { font-size: 13px; font-weight: 600; color: var(--text-muted); }
-    .highlight-meta { font-size: 13px; margin-top: 6px; font-weight: 700; color: var(--text-main); }
+    
+    .highlight-meta {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px dashed var(--border-color);
+      padding-top: 10px;
+      margin-top: 6px;
+    }
 
-    /* کنترل پنل */
+    .highlight-diff {
+      font-size: 11.5px;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: var(--radius-xs);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .highlight-diff.positive {
+      background: var(--color-buy-bg);
+      color: var(--color-buy);
+      border: 1px solid var(--color-buy-border);
+    }
+
+    .highlight-diff.negative {
+      background: var(--color-sell-bg);
+      color: var(--color-sell);
+      border: 1px solid var(--color-sell-border);
+    }
+
+    .highlight-diff.neutral {
+      background: var(--color-arbitrage-bg);
+      color: var(--color-arbitrage);
+      border: 1px solid var(--color-arbitrage-border);
+    }
+
+    /* -------------------------------------------------------------
+       ماشین‌حساب هوشمند و شبیه‌ساز سود معامله (Smart Calculator)
+       ------------------------------------------------------------- */
+    .calculator-panel {
+      background: var(--surface-color);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 18px 22px;
+      margin-bottom: 22px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .calc-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .calc-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .calc-body {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .calc-inputs-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .calc-input-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .calc-input {
+      font-family: var(--font-family);
+      width: 140px;
+      padding: 9px 12px;
+      font-size: 16px;
+      font-weight: 900;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-strong);
+      background: var(--bg-subtle);
+      color: var(--text-main);
+      text-align: center;
+      outline: none;
+      transition: border-color 0.15s ease, background 0.15s ease;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .calc-input:focus {
+      border-color: var(--brand-teal);
+      background: var(--surface-color);
+      box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.15);
+    }
+
+    .calc-chips {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .chip-btn {
+      font-family: var(--font-family);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 10px;
+      border-radius: var(--radius-xs);
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .chip-btn:hover {
+      background: var(--surface-elevated);
+      color: var(--text-main);
+      border-color: var(--border-strong);
+    }
+
+    .calc-result-box {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 10px 16px;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--text-body);
+      flex: 1;
+      min-width: 280px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .calc-highlight {
+      font-size: 16px;
+      font-weight: 900;
+      color: var(--color-buy);
+      font-variant-numeric: tabular-nums;
+      margin: 0 4px;
+    }
+
+    /* -------------------------------------------------------------
+       نوار قصد معامله، فیلترها و مرتب‌سازی (Control Bar)
+       ------------------------------------------------------------- */
     .control-panel {
       background: var(--surface-color);
       border: 1px solid var(--border-color);
       border-radius: var(--radius-md);
-      padding: 12px 16px;
-      margin-bottom: 16px;
+      padding: 14px 20px;
+      margin-bottom: 18px;
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
-      gap: 12px;
+      gap: 14px;
       box-shadow: var(--shadow-sm);
     }
 
     .intent-toggle-group {
       display: inline-flex;
-      background: var(--surface-subtle);
-      padding: 3px;
+      background: var(--bg-subtle);
+      padding: 4px;
       border-radius: var(--radius-sm);
       border: 1px solid var(--border-color);
     }
@@ -384,34 +684,44 @@
       font-family: var(--font-family);
       border: none;
       background: transparent;
-      padding: 8px 16px;
-      font-size: 13px;
+      padding: 9px 20px;
+      font-size: 13.5px;
       font-weight: 700;
       color: var(--text-muted);
       cursor: pointer;
-      border-radius: 4px;
+      border-radius: var(--radius-xs);
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
+      transition: all 0.15s ease;
+      user-select: none;
     }
 
     .intent-btn.active {
-      background: #ffffff;
+      background: var(--surface-color);
       color: var(--text-main);
       font-weight: 900;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+    }
+
+    .intent-btn.active.intent-sell {
+      color: var(--color-buy);
+    }
+
+    .intent-btn.active.intent-buy {
+      color: var(--color-sell);
     }
 
     .filter-options {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
       flex-wrap: wrap;
     }
 
     .sort-select, .search-input {
       font-family: var(--font-family);
-      padding: 8px 12px;
+      padding: 9px 14px;
       font-size: 13px;
       font-weight: 600;
       border-radius: var(--radius-sm);
@@ -419,15 +729,21 @@
       background: var(--surface-color);
       color: var(--text-main);
       outline: none;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
     }
 
-    .search-input { width: 175px; }
+    .sort-select:focus, .search-input:focus {
+      border-color: var(--brand-teal);
+      box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.15);
+    }
+
+    .search-input { width: 190px; }
 
     .refresh-box {
       display: flex;
       align-items: center;
-      gap: 8px;
-      font-size: 12.5px;
+      gap: 10px;
+      font-size: 13px;
       font-weight: 700;
       color: var(--text-muted);
     }
@@ -435,51 +751,25 @@
     .timer-badge {
       font-weight: 900;
       color: var(--text-main);
-      background: var(--surface-subtle);
-      padding: 3px 8px;
-      border-radius: 4px;
+      background: var(--bg-subtle);
+      padding: 4px 9px;
+      border-radius: var(--radius-xs);
       border: 1px solid var(--border-color);
-      min-width: 26px;
+      min-width: 28px;
       text-align: center;
+      font-variant-numeric: tabular-nums;
     }
 
-    /* ماشین‌حساب سریع */
-    .calculator-bar {
-      background: #ffffff;
-      border: 1px dashed var(--border-strong);
-      border-radius: var(--radius-md);
-      padding: 12px 18px;
-      margin-bottom: 16px;
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      flex-wrap: wrap;
-      font-size: 13.5px;
-      font-weight: 600;
-    }
-
-    .calc-input {
-      font-family: var(--font-family);
-      width: 120px;
-      padding: 6px 8px;
-      font-size: 14.5px;
-      font-weight: 900;
-      border-radius: var(--radius-sm);
-      border: 1px solid var(--border-strong);
-      text-align: center;
-      outline: none;
-    }
-
-    .calc-highlight { font-weight: 900; color: var(--color-emerald-accent); font-variant-numeric: tabular-nums; }
-
-    /* جدول دسکتاپ صرافی‌سنج */
+    /* -------------------------------------------------------------
+       جدول حرفه‌ای صرافی‌ها (Desktop Professional Table)
+       ------------------------------------------------------------- */
     .table-container {
       background: var(--surface-color);
       border: 1px solid var(--border-color);
       border-radius: var(--radius-md);
       box-shadow: var(--shadow-sm);
       overflow: hidden;
-      margin-bottom: 24px;
+      margin-bottom: 28px;
     }
 
     .exchange-table {
@@ -489,49 +779,161 @@
     }
 
     .exchange-table th {
-      background: #f1f5f9;
-      padding: 13px 16px;
-      font-size: 13px;
+      background: var(--bg-subtle);
+      padding: 16px 20px;
+      font-size: 13.5px;
       font-weight: 800;
       color: var(--text-main);
       border-bottom: 2px solid var(--border-color);
       white-space: nowrap;
     }
 
+    .exchange-table th.col-active {
+      background: rgba(13, 148, 136, 0.08);
+      color: var(--brand-teal-dark);
+      border-bottom-color: var(--brand-teal);
+    }
+
+    body.dark-theme .exchange-table th.col-active {
+      color: #5eead4;
+    }
+
     .exchange-table td {
-      padding: 14px 16px;
+      padding: 16px 20px;
       border-bottom: 1px solid var(--border-color);
       vertical-align: middle;
       font-size: 13.5px;
       font-weight: 600;
+      transition: background-color 0.12s ease;
     }
 
     .exchange-table tbody tr:last-child td { border-bottom: none; }
-    .exchange-table tbody tr:hover { background-color: #fafbfc; }
+    .exchange-table tbody tr:hover td { background-color: var(--bg-subtle); }
 
-    .exchange-info { display: flex; align-items: center; gap: 10px; }
+    /* ستون رتبه و صرافی */
+    .rank-num {
+      font-size: 13px;
+      font-weight: 900;
+      color: var(--text-muted);
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-color);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-variant-numeric: tabular-nums;
+      flex-shrink: 0;
+    }
+
+    .rank-top-1 {
+      background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
+      color: #ffffff;
+      border: none;
+      box-shadow: 0 2px 6px rgba(217, 119, 6, 0.35);
+    }
+
+    .rank-top-2 {
+      background: linear-gradient(135deg, #cbd5e1 0%, #94a3b8 100%);
+      color: #ffffff;
+      border: none;
+    }
+
+    .rank-top-3 {
+      background: linear-gradient(135deg, #fed7aa 0%, #f97316 100%);
+      color: #ffffff;
+      border: none;
+    }
+
+    .exchange-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
 
     .exchange-logo {
-      width: 36px;
-      height: 36px;
-      border-radius: 8px;
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
       color: #ffffff;
-      font-size: 14px;
+      font-size: 15px;
       font-weight: 900;
       flex-shrink: 0;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
     }
 
-    .exchange-title { font-size: 14.5px; font-weight: 900; color: var(--text-main); }
-    .exchange-en { font-size: 11.5px; font-weight: 600; color: var(--text-subtle); direction: ltr; text-align: right; }
+    .exchange-title-group {
+      display: flex;
+      flex-direction: column;
+    }
 
-    .price-cell { display: flex; flex-direction: column; gap: 2px; }
-    .price-value { font-size: 16px; font-weight: 900; color: var(--text-main); display: flex; gap: 4px; font-variant-numeric: tabular-nums; }
-    .price-sub { font-size: 11.5px; font-weight: 600; color: var(--text-muted); }
+    .exchange-title {
+      font-size: 15px;
+      font-weight: 900;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
 
+    .exchange-en {
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--text-subtle);
+      direction: ltr;
+      text-align: right;
+    }
+
+    .exchange-type-tag {
+      font-size: 10.5px;
+      font-weight: 700;
+      padding: 1px 6px;
+      border-radius: var(--radius-xs);
+      background: var(--bg-subtle);
+      color: var(--text-muted);
+      border: 1px solid var(--border-color);
+      display: inline-block;
+      margin-top: 2px;
+    }
+
+    /* ستون‌های قیمت */
+    .price-cell {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .price-value {
+      font-size: 17.5px;
+      font-weight: 900;
+      color: var(--text-main);
+      display: flex;
+      align-items: baseline;
+      gap: 5px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .price-sub {
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .highlighted-column-buy {
+      color: var(--color-buy);
+    }
+
+    .highlighted-column-sell {
+      color: var(--color-sell);
+    }
+
+    /* بج‌های شاخص */
     .badge {
       display: inline-flex;
       align-items: center;
@@ -539,74 +941,181 @@
       font-size: 11.5px;
       font-weight: 800;
       padding: 3px 8px;
-      border-radius: 4px;
+      border-radius: var(--radius-xs);
       white-space: nowrap;
     }
 
     .badge-best-buy {
-      background: var(--color-emerald-bg);
-      color: var(--color-emerald-text);
-      border: 1px solid var(--color-emerald-border);
+      background: var(--color-buy-bg);
+      color: var(--color-buy);
+      border: 1px solid var(--color-buy-border);
     }
 
     .badge-best-sell {
-      background: var(--color-blue-bg);
-      color: var(--color-blue-text);
-      border: 1px solid var(--color-blue-border);
+      background: var(--color-sell-bg);
+      color: var(--color-sell);
+      border: 1px solid var(--color-sell-border);
     }
 
     .badge-spread {
-      background: #f1f5f9;
+      background: var(--bg-subtle);
       color: var(--text-muted);
       border: 1px solid var(--border-color);
       font-weight: 700;
+      font-variant-numeric: tabular-nums;
     }
 
-    .status-dot-green { width: 7px; height: 7px; border-radius: 50%; background: #10b981; display: inline-block; }
+    .badge-spread.low {
+      background: var(--color-buy-bg);
+      color: var(--color-buy);
+      border-color: var(--color-buy-border);
+    }
 
-    /* کارت‌های موبایل */
-    .mobile-cards { display: none; flex-direction: column; gap: 12px; margin-bottom: 24px; }
+    .status-dot-green {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background-color: #10b981;
+      display: inline-block;
+      margin-left: 4px;
+    }
+
+    /* دکمه معامله حرفه‌ای */
+    .trade-btn {
+      font-family: var(--font-family);
+      font-size: 12.5px;
+      font-weight: 800;
+      padding: 7px 16px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-color);
+      background: var(--surface-color);
+      color: var(--text-main);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+      box-shadow: var(--shadow-xs);
+    }
+
+    .trade-btn:hover {
+      background: var(--text-main);
+      color: var(--surface-color);
+      border-color: var(--text-main);
+      box-shadow: var(--shadow-sm);
+      transform: translateY(-1px);
+    }
+
+    /* -------------------------------------------------------------
+       کارت‌های بهینه‌شده موبایل (Mobile View)
+       ------------------------------------------------------------- */
+    .mobile-cards { display: none; flex-direction: column; gap: 14px; margin-bottom: 28px; }
+
+    @media (max-width: 900px) {
+      .table-container { display: none; }
+      .mobile-cards { display: flex; }
+      .search-input { width: 100%; }
+      .filter-options { width: 100%; justify-content: space-between; }
+    }
+    
     .m-card {
       background: var(--surface-color);
       border: 1px solid var(--border-color);
       border-radius: var(--radius-md);
-      padding: 14px;
+      padding: 16px;
       box-shadow: var(--shadow-sm);
+      position: relative;
     }
+
     .m-card-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 12px;
       border-bottom: 1px solid var(--border-color);
-      padding-bottom: 10px;
+      padding-bottom: 12px;
     }
-    .m-card-prices { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+
+    .m-card-prices {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
     .m-price-box {
-      background: var(--surface-subtle);
+      background: var(--bg-subtle);
       border-radius: var(--radius-sm);
-      padding: 10px;
+      padding: 12px;
       border: 1px solid var(--border-color);
     }
-    .m-price-box.highlighted-buy { background: var(--color-emerald-bg); border-color: var(--color-emerald-border); }
-    .m-price-box.highlighted-sell { background: var(--color-blue-bg); border-color: var(--color-blue-border); }
-    .m-card-footer { display: flex; justify-content: space-between; align-items: center; }
 
-    /* استایل تب‌های آکاردئونی سئو و موتورهای هوش مصنوعی */
-    .seo-section { margin-top: 40px; border-top: 1px solid var(--border-color); padding-top: 32px; }
-    .seo-title { font-size: 20px; font-weight: 900; color: var(--text-main); margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
-    .seo-desc { font-size: 14px; font-weight: 500; color: var(--text-muted); margin-bottom: 24px; line-height: 1.85; }
-    .accordion-list { display: flex; flex-direction: column; gap: 12px; }
+    .m-price-box.highlighted-buy {
+      background: var(--color-buy-bg);
+      border-color: var(--color-buy-border);
+    }
+
+    .m-price-box.highlighted-sell {
+      background: var(--color-sell-bg);
+      border-color: var(--color-sell-border);
+    }
+
+    .m-card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* -------------------------------------------------------------
+       بخش آکاردئونی مقالات و سئو (SEO & GEO Knowledge Hub)
+       ------------------------------------------------------------- */
+    .seo-section {
+      margin-top: 48px;
+      border-top: 1px solid var(--border-color);
+      padding-top: 36px;
+    }
+
+    .seo-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--text-main);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .seo-desc {
+      font-size: 14.5px;
+      font-weight: 500;
+      color: var(--text-muted);
+      margin-bottom: 26px;
+      line-height: 1.9;
+    }
+
+    .accordion-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
     .accordion-item {
       background: var(--surface-color);
       border: 1px solid var(--border-color);
       border-radius: var(--radius-md);
       overflow: hidden;
       box-shadow: var(--shadow-sm);
+      transition: border-color 0.15s ease;
     }
+
+    .accordion-item[open] {
+      border-color: var(--border-strong);
+    }
+
     .accordion-summary {
-      padding: 16px 20px;
-      font-size: 15px;
+      padding: 18px 22px;
+      font-size: 15.5px;
       font-weight: 800;
       color: var(--text-main);
       cursor: pointer;
@@ -615,52 +1124,81 @@
       align-items: center;
       list-style: none;
       transition: background-color 0.15s ease;
+      user-select: none;
     }
-    .accordion-summary:hover { background-color: #fafbfc; }
+
+    .accordion-summary:hover { background-color: var(--bg-subtle); }
     .accordion-summary::-webkit-details-marker { display: none; }
-    .accordion-icon { width: 18px; height: 18px; stroke: var(--text-muted); stroke-width: 2.4; transition: transform 0.2s ease; }
-    details[open] .accordion-icon { transform: rotate(180deg); }
-    .accordion-content { padding: 0 20px 20px 20px; font-size: 14px; font-weight: 500; color: #1e293b; line-height: 1.9; border-top: 1px solid #f1f5f9; margin-top: 6px; }
-    .accordion-content p { margin-top: 12px; }
-    .accordion-content ul, .accordion-content ol { padding-right: 22px; margin-top: 10px; }
-    .accordion-content li { margin-bottom: 6px; }
-    .accordion-content strong { color: #090d16; font-weight: 800; }
+    
+    .accordion-icon {
+      width: 20px;
+      height: 20px;
+      stroke: var(--text-muted);
+      stroke-width: 2.4;
+      transition: transform 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    .accordion-item[open] .accordion-icon {
+      transform: rotate(180deg);
+      stroke: var(--brand-teal);
+    }
+
+    .accordion-content {
+      padding: 0 22px 22px 22px;
+      font-size: 14px;
+      line-height: 1.95;
+      color: var(--text-body);
+      border-top: 1px solid var(--border-color);
+      padding-top: 16px;
+    }
+
+    .accordion-content p { margin-bottom: 12px; }
+    .accordion-content ul, .accordion-content ol { padding-right: 22px; margin-bottom: 14px; }
+    .accordion-content li { margin-bottom: 8px; }
+
+    .formula-box {
+      background: var(--bg-subtle);
+      border-right: 4px solid var(--brand-teal);
+      padding: 12px 18px;
+      margin: 14px 0;
+      border-radius: var(--radius-xs);
+      font-weight: 700;
+      color: var(--text-main);
+      direction: ltr;
+      text-align: right;
+    }
 
     .seo-table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 14px;
+      margin: 16px 0;
       font-size: 13.5px;
-      font-weight: 600;
     }
+
     .seo-table th, .seo-table td {
-      padding: 11px 14px;
       border: 1px solid var(--border-color);
+      padding: 10px 14px;
       text-align: right;
     }
-    .seo-table th { background: #f1f5f9; font-weight: 800; color: #090d16; }
 
-    .formula-box {
-      background: #f8fafc;
-      border-right: 4px solid var(--color-blue-accent);
-      padding: 12px 16px;
-      margin: 12px 0;
-      font-weight: 700;
-      color: #090d16;
-      border-radius: 4px;
+    .seo-table th { background: var(--bg-subtle); font-weight: 800; }
+
+    /* فوتر اختصاصی صرافی‌سنج */
+    .footer {
+      margin-top: 60px;
+      border-top: 1px solid var(--border-color);
+      padding-top: 28px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.8;
     }
 
-    .footer { margin-top: 48px; text-align: center; font-size: 13px; font-weight: 600; color: var(--text-subtle); border-top: 1px solid var(--border-color); padding-top: 24px; }
-
-    @media (max-width: 768px) {
-      .table-container { display: none; }
-      .mobile-cards { display: flex; }
-      .control-panel { flex-direction: column; align-items: stretch; }
-      .intent-toggle-group { width: 100%; }
-      .intent-btn { flex: 1; justify-content: center; }
-      .filter-options { width: 100%; justify-content: space-between; }
-      .search-input { flex: 1; }
-      .brand-title { font-size: 20px; }
+    .footer a {
+      color: var(--brand-teal);
+      text-decoration: none;
+      font-weight: 700;
     }
   </style>
 </head>
@@ -668,159 +1206,234 @@
 
   <div class="container">
     
-    <!-- هدر صرافی‌سنج همراه با لوگوی اختصاصی و نشان برند -->
+    <!-- هدر سایت صرافی‌سنج -->
     <header class="header">
       <div class="header-top">
         <div class="brand">
-          <!-- لوگوی اختصاصی صرافی‌سنج: تلفیق گیج اندازه‌گیری هوشمند و نماد رمزارز تتر -->
           <div class="brand-logo-wrap" title="صرافی‌سنج (SarafiSanj)">
-            <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <!-- کمان بیرونی گیج اندازه‌گیری -->
-              <path d="M6 21C4.8 19 4 16.6 4 14C4 7.4 9.4 2 16 2C22.6 2 28 7.4 28 14C28 16.6 27.2 19 26 21" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round"/>
-              <!-- خط پایه تتر -->
-              <path d="M10 9H22" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round"/>
-              <!-- عقربه و ستون مرکزی تتر -->
-              <path d="M16 9V23" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round"/>
-              <!-- نشانگر کالیبره نقطه سنجش -->
-              <circle cx="16" cy="14" r="2.8" fill="#a7f3d0" stroke="#0f766e" stroke-width="1.5"/>
-              <path d="M16 23L19 28H13L16 23Z" fill="#a7f3d0"/>
+            <!-- نشان و لوگوی اختصاصی صرافی‌سنج -->
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+              <circle cx="12" cy="12" r="9" stroke-width="1.6" opacity="0.4"/>
             </svg>
           </div>
           <div class="brand-title-group">
-            <div class="brand-title">
+            <h1 class="brand-title">
               صرافی‌سنج
-              <span class="brand-badge">دیده‌بان هوشمند تتر</span>
-            </div>
-            <p class="brand-subtitle">سنجش و رتبه‌بندی لحظه‌ای نرخ خرید و فروش تتر (USDT) در صرافی‌های ایران</p>
+              <span class="brand-badge">دیده‌بان لحظه‌ای تتر</span>
+            </h1>
+            <span class="brand-subtitle">رصد، مقایسه شفاف و رتبه‌بندی قیمت خرید و فروش تتر (USDT) در صرافی‌های ایران</span>
           </div>
         </div>
 
         <div class="header-actions">
           <div class="live-status-pill">
             <span class="live-dot" id="liveDot"></span>
-            <span id="networkStatusText">متصل به شبکه</span>
+            <span id="networkStatusText">بروزرسانی زنده صرافی‌ها</span>
           </div>
-          <button class="btn btn-sm" id="btnManualRefresh" title="به‌روزرسانی فوری نرخ‌ها">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
-              <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.19"/>
+
+          <button class="btn btn-sm" id="btnThemeToggle" title="تغییر تم تاریک / روشن">
+            <svg id="themeIconMoon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
             </svg>
-            بروزرسانی
+            <svg id="themeIconSun" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" style="display: none;">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <span id="themeToggleText">حالت تاریک</span>
           </button>
+        </div>
+      </div>
+
+      <!-- نوار تیکر وضعیت بازار -->
+      <div class="market-ticker-bar">
+        <div class="ticker-item">
+          <span class="ticker-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          </span>
+          <span>پوشش صرافی‌ها: <strong id="totalExchangesCount">۱۵ صرافی معتبر</strong></span>
+        </div>
+        <div class="ticker-item">
+          <span class="ticker-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </span>
+          <span id="lastUpdatedClock">آخرین سنجش: در حال دریافت...</span>
+        </div>
+        <div class="ticker-item">
+          <span class="ticker-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </span>
+          <span>پتانسیل آربیتراژ آنی: <strong id="arbitragePotentialText">در حال محاسبه...</strong></span>
         </div>
       </div>
     </header>
 
-    <!-- نوار شاخص سنجشگر وضعیت بازار صرافی‌سنج -->
-    <div class="market-gauge-bar">
-      <div class="gauge-item">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
-          <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-        </svg>
-        <span>شاخص سنجشگر بازار: <strong>۱۵ صرافی در حال رصد آنلاین</strong></span>
-      </div>
-      <div class="gauge-item">
-        <span>وضعیت نقدشوندگی: <strong style="color: #059669;">بسیار بالا (اسپرد رقابتی)</strong></span>
-      </div>
-      <div class="gauge-item">
-        <span id="marketSpreadNotice">اختلاف هوشمند بهترین خریدار و فروشنده: <strong>محاسبه آنلاین...</strong></span>
-      </div>
-    </div>
-
-    <!-- کارت‌های برتر بازار -->
+    <!-- کارت‌های چهارگانه تحلیلی بازار تتر -->
     <section class="highlight-grid">
+      <!-- کارت ۱: بهترین نرخ خرید صرافی -->
       <div class="highlight-card card-buy">
-        <div class="highlight-label">
-          <span>بالاترین نرخ خرید صرافی (گرون‌تر می‌خره)</span>
-          <span class="badge badge-best-buy">★ رتبه ۱ برای فروش شما</span>
+        <div>
+          <div class="highlight-label">
+            <span>بالاترین قیمت خرید صرافی</span>
+            <span class="badge badge-best-buy">فروش تتر شما</span>
+          </div>
+          <div class="highlight-price" id="topBuyPrice">
+            <span>---</span>
+            <span class="highlight-unit">تومان</span>
+          </div>
         </div>
-        <div class="highlight-price" id="topBuyPrice"><span>---,---</span><span class="highlight-unit">تومان</span></div>
-        <div class="highlight-meta" id="topBuyExchange">صرافی: در حال محاسبه...</div>
+        <div class="highlight-meta">
+          <span id="topBuyExchange">صرافی: در حال سنجش</span>
+          <span class="highlight-diff positive" id="topBuyDiffTag">+-- تومان بالاتر</span>
+        </div>
       </div>
 
+      <!-- کارت ۲: ارزان‌ترین نرخ فروش صرافی -->
       <div class="highlight-card card-sell">
-        <div class="highlight-label">
-          <span>کمترین نرخ فروش صرافی (ارزون‌تر می‌فروشه)</span>
-          <span class="badge badge-best-sell">★ رتبه ۱ برای خرید شما</span>
+        <div>
+          <div class="highlight-label">
+            <span>ارزان‌ترین قیمت فروش صرافی</span>
+            <span class="badge badge-best-sell">خرید تتر شما</span>
+          </div>
+          <div class="highlight-price" id="topSellPrice">
+            <span>---</span>
+            <span class="highlight-unit">تومان</span>
+          </div>
         </div>
-        <div class="highlight-price" id="topSellPrice"><span>---,---</span><span class="highlight-unit">تومان</span></div>
-        <div class="highlight-meta" id="topSellExchange">صرافی: در حال محاسبه...</div>
+        <div class="highlight-meta">
+          <span id="topSellExchange">صرافی: در حال سنجش</span>
+          <span class="highlight-diff negative" id="topSellDiffTag">--- تومان ارزان‌تر</span>
+        </div>
       </div>
 
-      <div class="highlight-card">
-        <div class="highlight-label">
-          <span>میانگین شاخص صرافی‌سنج</span>
-          <span class="badge badge-spread" id="totalExchangesCount">۱۵ صرافی معتبر</span>
+      <!-- کارت ۳: میانگین وزنی بازار تتر -->
+      <div class="highlight-card card-avg">
+        <div>
+          <div class="highlight-label">
+            <span>شاخص میانگین بازار تتر</span>
+            <span style="font-size: 11px; font-weight: 700; color: var(--text-muted);">USDT Index</span>
+          </div>
+          <div class="highlight-price" id="avgMarketPrice">
+            <span>---</span>
+            <span class="highlight-unit">تومان</span>
+          </div>
         </div>
-        <div class="highlight-price" id="avgMarketPrice"><span>---,---</span><span class="highlight-unit">تومان</span></div>
-        <div class="highlight-meta" id="lastUpdatedClock">آخرین دریافت: --:--:--</div>
+        <div class="highlight-meta">
+          <span>مبنای تسویه پایا و OTC</span>
+          <span style="font-size: 11.5px; font-weight: 700; color: var(--brand-teal);">میانگین کل</span>
+        </div>
+      </div>
+
+      <!-- کارت ۴: کمترین اسپرد بازار -->
+      <div class="highlight-card card-arbitrage">
+        <div>
+          <div class="highlight-label">
+            <span>فرصت سود آربیتراژ</span>
+            <span class="highlight-diff neutral">سود خالص خرید و فروش</span>
+          </div>
+          <div class="highlight-price" id="topArbitrageSpread">
+            <span>---</span>
+            <span class="highlight-unit">تومان بر تتر</span>
+          </div>
+        </div>
+        <div class="highlight-meta">
+          <span id="arbitragePairText">بین بهترین خریدار و فروشنده</span>
+          <span style="font-size: 11.5px; font-weight: 700; color: var(--color-arbitrage);">سود بی‌ریسک</span>
+        </div>
       </div>
     </section>
 
-    <!-- ماشین‌حساب سریع -->
-    <div class="calculator-bar">
-      <div style="display: flex; align-items: center; gap: 8px;">
-        <label for="tetherAmount" style="font-weight: 800; color: var(--text-main);">ماشین‌حساب صرافی‌سنج:</label>
-        <input type="number" id="tetherAmount" class="calc-input" value="1000" min="10" step="50">
-        <span>تتر (USDT)</span>
+    <!-- پنل ماشین‌حساب سریع و شبیه‌ساز سود -->
+    <section class="calculator-panel">
+      <div class="calc-header">
+        <div class="calc-title">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="16" y1="14" x2="16" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg>
+          <span>ماشین‌حساب هوشمند تبدیل و محاسبه بیشترین بازدهی ریالی</span>
+        </div>
+        <div class="calc-chips">
+          <button class="chip-btn" data-val="100">۱۰۰ تتر</button>
+          <button class="chip-btn" data-val="500">۵۰۰ تتر</button>
+          <button class="chip-btn" data-val="1000">۱,۰۰۰ تتر</button>
+          <button class="chip-btn" data-val="5000">۵,۰۰۰ تتر</button>
+          <button class="chip-btn" data-val="10000">۱۰,۰۰۰ تتر</button>
+        </div>
       </div>
-      <div id="calcSummary">معادل حدوداً <span class="calc-highlight" id="calcTomanResult">---</span> تومان در بهترین صرافی</div>
-    </div>
+      <div class="calc-body">
+        <div class="calc-inputs-group">
+          <div class="calc-input-wrap">
+            <span style="font-weight: 700; color: var(--text-muted);">مقدار تتر:</span>
+            <input type="number" id="tetherAmount" class="calc-input" value="1000" min="1" step="10">
+            <span style="font-weight: 800; color: var(--text-main);">USDT</span>
+          </div>
+        </div>
+        <div class="calc-result-box" id="calcSummary">
+          در حال محاسبه بیشترین سود دریافتی با صرافی‌سنج...
+        </div>
+      </div>
+    </section>
 
-    <!-- کنترل پنل مرتب‌سازی -->
+    <!-- نوار قصد معامله، جستجو و مرتب‌سازی -->
     <div class="control-panel">
+      <!-- دکمه‌های قصد معامله کاربر -->
       <div class="intent-toggle-group">
-        <button class="intent-btn active" id="btnIntentSell">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
-            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
-            <polyline points="17 6 23 6 23 12"/>
-          </svg>
-          می‌خواهم بفروشم (بالاترین نرخ خرید)
+        <button class="intent-btn intent-sell active" id="btnIntentSell" title="می‌خواهم تتر بفروشم">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+          قصد فروش تتر دارم (مرتب‌سازی بالاترین خریدار)
         </button>
-        <button class="intent-btn" id="btnIntentBuy">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
-            <polyline points="23 18 13.5 8.5 8.5 13.5 1 6"/>
-            <polyline points="17 18 23 18 23 12"/>
-          </svg>
-          می‌خواهم بخرم (کمترین نرخ فروش)
+        <button class="intent-btn intent-buy" id="btnIntentBuy" title="می‌خواهم تتر بخرم">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+          قصد خرید تتر دارم (مرتب‌سازی ارزان‌ترین فروشنده)
         </button>
       </div>
 
+      <!-- فیلترها و مرتب‌سازی -->
       <div class="filter-options">
-        <input type="text" id="searchInput" class="search-input" placeholder="جستجوی صرافی...">
+        <input type="text" id="searchInput" class="search-input" placeholder="جستجوی نام صرافی...">
+        
         <select id="sortSelect" class="sort-select">
-          <option value="highest_buy">بیشترین نرخ خرید صرافی (پیش‌فرض)</option>
-          <option value="lowest_sell">کمترین نرخ فروش صرافی</option>
-          <option value="lowest_spread">کمترین اختلاف قیمت (اسپرد)</option>
-          <option value="name">بر اساس نام صرافی</option>
+          <option value="highest_buy">مرتب‌سازی: بالاترین نرخ خرید صرافی</option>
+          <option value="lowest_sell">مرتب‌سازی: ارزان‌ترین نرخ فروش صرافی</option>
+          <option value="lowest_spread">مرتب‌سازی: کمترین اختلاف (اسپرد)</option>
+          <option value="name">مرتب‌سازی: نام صرافی (الفبا)</option>
         </select>
+
         <div class="refresh-box">
-          <span>بروزرسانی خودکار:</span>
           <span class="timer-badge" id="timerCount">۳۰</span>
-          <span>ثانیه</span>
+          <button class="btn btn-sm" id="btnManualRefresh" title="بروزرسانی دستی نرخ‌ها">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+            بروزرسانی
+          </button>
         </div>
       </div>
     </div>
 
-    <!-- جدول دسکتاپ صرافی‌سنج -->
+    <!-- جدول مقایسه صرافی‌ها (Desktop Professional Table) -->
     <div class="table-container">
       <table class="exchange-table">
         <thead>
           <tr>
-            <th>نام صرافی</th>
-            <th>نرخ خرید صرافی (شما می‌فروشید)</th>
-            <th>نرخ فروش صرافی (شما می‌خرید)</th>
-            <th>اختلاف قیمت (اسپرد)</th>
-            <th>وضعیت اتصال</th>
-            <th>معامله مستقیم</th>
+            <th style="width: 250px;">رتبه و نام صرافی</th>
+            <th id="thBuyCol" class="col-active">نرخ خرید صرافی (شما می‌فروشید)</th>
+            <th id="thSellCol">نرخ فروش صرافی (شما می‌خرید)</th>
+            <th>اسپرد (اختلاف)</th>
+            <th>وضعیت و شاخص</th>
+            <th style="width: 120px; text-align: center;">ورود به معامله</th>
           </tr>
         </thead>
         <tbody id="exchangeTableBody">
-          <tr><td colspan="6" style="text-align: center; padding: 30px; color: var(--text-muted); font-weight: 700;">در حال دریافت داده‌های صرافی‌سنج...</td></tr>
+          <tr><td colspan="6" style="text-align: center; padding: 40px; color: var(--text-muted); font-weight: 700;">در حال اتصال و دریافت قیمت‌های صرافی‌سنج...</td></tr>
         </tbody>
       </table>
     </div>
 
-    <!-- کارت‌های موبایل -->
+    <!-- کارت‌های بهینه‌شده موبایل -->
     <div class="mobile-cards" id="mobileCardsContainer"></div>
 
     <!-- بخش توضیحات و تب‌های آکاردئونی سئو و هوش‌های مصنوعی (GEO & SEO) -->
@@ -1013,7 +1626,8 @@
     <!-- فوتر اختصاصی صرافی‌سنج -->
     <footer class="footer">
       <p><strong>صرافی‌سنج (SarafiSanj)</strong> — سامانه مرجع سنجش، دیده‌بان و رتبه‌بندی لحظه‌ای صرافی‌های ارز دیجیتال ایران</p>
-      <p style="margin-top: 5px;">پایش هوشمند و بدون سوگیری تجاری نرخ خرید و فروش تتر در ۱۵ صرافی برتر ایرانی</p>
+      <p style="margin-top: 6px;">پایش هوشمند و بدون سوگیری تجاری نرخ خرید و فروش تتر در ۱۵ صرافی برتر ایرانی با کش ۲۵ ثانیه‌ای کلودفلر</p>
+      <p style="margin-top: 10px; font-size: 12px; color: var(--text-subtle);">سلب مسئولیت: نرخ‌ها صرفاً جهت اطلاع‌رسانی و مقایسه گردآوری شده‌اند. کاربر پیش از معامله شخصاً مسئول بررسی نهایی نرخ و شرایط صرافی مقصد می‌باشد.</p>
     </footer>
 
   </div>
@@ -1025,13 +1639,14 @@
     const WORKER_URL = 'https://sarafisanj.bardiasobhani28.workers.dev';
 
     let exchangesData = [];
-    let currentIntent = 'sell';
+    let currentIntent = 'sell'; // 'sell' = user sells USDT (sort by highest buyPrice) | 'buy' = user buys USDT (sort by lowest sellPrice)
     let currentSort = 'highest_buy';
     let searchQuery = '';
     let refreshSecondsLeft = 30;
     let refreshTimer = null;
     let isLoading = false;
 
+    // عناصر DOM
     const exchangeTableBody = document.getElementById('exchangeTableBody');
     const mobileCardsContainer = document.getElementById('mobileCardsContainer');
     const timerCountEl = document.getElementById('timerCount');
@@ -1045,14 +1660,63 @@
 
     const topBuyPriceEl = document.getElementById('topBuyPrice');
     const topBuyExchangeEl = document.getElementById('topBuyExchange');
+    const topBuyDiffTag = document.getElementById('topBuyDiffTag');
     const topSellPriceEl = document.getElementById('topSellPrice');
     const topSellExchangeEl = document.getElementById('topSellExchange');
+    const topSellDiffTag = document.getElementById('topSellDiffTag');
     const avgMarketPriceEl = document.getElementById('avgMarketPrice');
+    const topArbitrageSpreadEl = document.getElementById('topArbitrageSpread');
+    const arbitragePairTextEl = document.getElementById('arbitragePairText');
     const lastUpdatedClockEl = document.getElementById('lastUpdatedClock');
     const liveDotEl = document.getElementById('liveDot');
     const networkStatusTextEl = document.getElementById('networkStatusText');
     const totalExchangesCountEl = document.getElementById('totalExchangesCount');
-    const marketSpreadNoticeEl = document.getElementById('marketSpreadNotice');
+    const arbitragePotentialTextEl = document.getElementById('arbitragePotentialText');
+    const thBuyCol = document.getElementById('thBuyCol');
+    const thSellCol = document.getElementById('thSellCol');
+
+    // دارک مود / تم
+    const btnThemeToggle = document.getElementById('btnThemeToggle');
+    const themeIconSun = document.getElementById('themeIconSun');
+    const themeIconMoon = document.getElementById('themeIconMoon');
+    const themeToggleText = document.getElementById('themeToggleText');
+
+    let isDark = localStorage.getItem('sarafisanj_theme') === 'dark';
+    if (isDark) enableDarkMode();
+
+    function enableDarkMode() {
+      document.body.classList.add('dark-theme');
+      themeIconSun.style.display = 'block';
+      themeIconMoon.style.display = 'none';
+      themeToggleText.textContent = 'حالت روشن';
+      localStorage.setItem('sarafisanj_theme', 'dark');
+      isDark = true;
+    }
+
+    function disableDarkMode() {
+      document.body.classList.remove('dark-theme');
+      themeIconSun.style.display = 'none';
+      themeIconMoon.style.display = 'block';
+      themeToggleText.textContent = 'حالت تاریک';
+      localStorage.setItem('sarafisanj_theme', 'light');
+      isDark = false;
+    }
+
+    btnThemeToggle.addEventListener('click', () => {
+      if (isDark) disableDarkMode();
+      else enableDarkMode();
+    });
+
+    // دکمه‌های سریع مقدار ماشین‌حساب
+    document.querySelectorAll('.chip-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const val = btn.getAttribute('data-val');
+        if (val) {
+          tetherAmountInput.value = val;
+          updateSummaryMetrics();
+        }
+      });
+    });
 
     const faNumber = new Intl.NumberFormat('fa-IR');
 
@@ -1061,6 +1725,7 @@
       return faNumber.format(Math.round(num));
     }
 
+    // دریافت داده‌های صرافی‌ها از ورکر یا اندپوینت محلی
     async function fetchRates() {
       if (isLoading) return;
       isLoading = true;
@@ -1072,7 +1737,7 @@
         let response = await fetch(targetUrl, { headers: { 'Accept': 'application/json' } });
         let contentType = response.headers.get('content-type') || '';
 
-        // در صورتی که ورکر هنوز کد به‌روزشده را نگرفته باشد و صفحه html برگرداند
+        // در صورتی که ورکر پاسخ html برگرداند یا خطا دهد، از اندپوینت محلی بخوان
         if (!response.ok || !contentType.includes('application/json')) {
           if (targetUrl !== '/api/tether-rates') {
             const apiTry = await fetch(targetUrl.replace(/\/$/, '') + '/api/tether-rates', { headers: { 'Accept': 'application/json' } });
@@ -1094,7 +1759,7 @@
           updateSummaryMetrics(json.summary);
           render();
           liveDotEl.style.backgroundColor = '#10b981';
-          networkStatusTextEl.textContent = json.cached ? 'پاسخ سریع (کش صرافی‌سنج)' : 'بروزرسانی لحظه‌ای';
+          networkStatusTextEl.textContent = json.cached ? 'پاسخ سریع (کش صرافی‌سنج)' : 'بروزرسانی زنده صرافی‌ها';
         }
       } catch (err) {
         loadFallbackRates();
@@ -1108,21 +1773,21 @@
     function loadFallbackRates() {
       const base = 267000;
       exchangesData = [
-        { id: 'nobitex', name: 'نوبیتکس', enName: 'Nobitex', logoColor: '#4338ca', buyPrice: base + 20, sellPrice: base + 450, status: 'online', tradeUrl: 'https://nobitex.ir/pricing/' },
-        { id: 'wallex', name: 'والکس', enName: 'Wallex', logoColor: '#0284c7', buyPrice: base - 70, sellPrice: base + 10, status: 'online', tradeUrl: 'https://wallex.ir/markets/usdt-tmn' },
-        { id: 'ompfinex', name: 'او ام پی فینکس', enName: 'OMPfinex', logoColor: '#0891b2', buyPrice: base + 520, sellPrice: base + 350, status: 'online', tradeUrl: 'https://ompfinex.com/trade/USDT-IRR' },
-        { id: 'tetherland', name: 'تترلند', enName: 'Tetherland', logoColor: '#10b981', buyPrice: base + 100, sellPrice: base + 100, status: 'online', tradeUrl: 'https://tetherland.com/easy-exchange' },
-        { id: 'abantether', name: 'آبان‌تتر', enName: 'Aban Tether', logoColor: '#059669', buyPrice: base + 350, sellPrice: base + 480, status: 'online', tradeUrl: 'https://abantether.com/market' },
-        { id: 'tabdeal', name: 'تبدیل', enName: 'Tabdeal', logoColor: '#7c3aed', buyPrice: base - 270, sellPrice: base + 270, status: 'online', tradeUrl: 'https://tabdeal.org/market/USDT-IRT' },
-        { id: 'bitpin', name: 'بیت‌پین', enName: 'Bitpin', logoColor: '#16a34a', buyPrice: base - 400, sellPrice: base + 120, status: 'online', tradeUrl: 'https://bitpin.ir/coin/USDT' },
-        { id: 'ramzinex', name: 'رمزینکس', enName: 'Ramzinex', logoColor: '#ea580c', buyPrice: base - 900, sellPrice: base - 400, status: 'online', tradeUrl: 'https://ramzinex.com/exchange/order-book/usdt-irr' },
-        { id: 'exir', name: 'اکسیر', enName: 'Exir', logoColor: '#2563eb', buyPrice: base - 350, sellPrice: base + 350, status: 'online', tradeUrl: 'https://exir.io/trading/usdt-irt' },
-        { id: 'sarmayex', name: 'سرمایکس', enName: 'Sarmayex', logoColor: '#d97706', buyPrice: base - 1800, sellPrice: base + 2200, status: 'online', tradeUrl: 'https://sarmayex.com/easy-exchange' },
-        { id: 'bit24', name: 'بیت ۲۴', enName: 'Bit24', logoColor: '#e11d48', buyPrice: base + 180, sellPrice: base + 380, status: 'online', tradeUrl: 'https://bit24.cash' },
-        { id: 'arzpaya', name: 'ارزپایا', enName: 'ArzPaya', logoColor: '#4f46e5', buyPrice: base - 150, sellPrice: base + 120, status: 'online', tradeUrl: 'https://arzpaya.com' },
-        { id: 'arzinja', name: 'ارزینجا', enName: 'Arzinja', logoColor: '#0d9488', buyPrice: base + 220, sellPrice: base + 420, status: 'online', tradeUrl: 'https://arzinja.info' },
-        { id: 'raastin', name: 'راستین', enName: 'Raastin', logoColor: '#6366f1', buyPrice: base - 50, sellPrice: base + 190, status: 'online', tradeUrl: 'https://raastin.com' },
-        { id: 'rabex', name: 'رابکس', enName: 'Rabex', logoColor: '#9333ea', buyPrice: base + 80, sellPrice: base + 310, status: 'online', tradeUrl: 'https://rabex.ir' },
+        { id: 'nobitex', name: 'نوبیتکس', enName: 'Nobitex', type: 'P2P', logoColor: '#4338ca', buyPrice: base + 20, sellPrice: base + 450, status: 'online', tradeUrl: 'https://nobitex.ir/pricing/' },
+        { id: 'wallex', name: 'والکس', enName: 'Wallex', type: 'P2P', logoColor: '#0284c7', buyPrice: base - 70, sellPrice: base + 10, status: 'online', tradeUrl: 'https://wallex.ir/markets/usdt-tmn' },
+        { id: 'ompfinex', name: 'او ام پی فینکس', enName: 'OMPfinex', type: 'P2P', logoColor: '#0891b2', buyPrice: base + 520, sellPrice: base + 350, status: 'online', tradeUrl: 'https://ompfinex.com/trade/USDT-IRR' },
+        { id: 'tetherland', name: 'تترلند', enName: 'Tetherland', type: 'OTC', logoColor: '#10b981', buyPrice: base + 100, sellPrice: base + 100, status: 'online', tradeUrl: 'https://tetherland.com/easy-exchange' },
+        { id: 'abantether', name: 'آبان‌تتر', enName: 'Aban Tether', type: 'OTC', logoColor: '#059669', buyPrice: base + 350, sellPrice: base + 480, status: 'online', tradeUrl: 'https://abantether.com/market' },
+        { id: 'tabdeal', name: 'تبدیل', enName: 'Tabdeal', type: 'P2P', logoColor: '#7c3aed', buyPrice: base - 270, sellPrice: base + 270, status: 'online', tradeUrl: 'https://tabdeal.org/market/USDT-IRT' },
+        { id: 'bitpin', name: 'بیت‌پین', enName: 'Bitpin', type: 'P2P', logoColor: '#16a34a', buyPrice: base - 400, sellPrice: base + 120, status: 'online', tradeUrl: 'https://bitpin.ir/coin/USDT' },
+        { id: 'ramzinex', name: 'رمزینکس', enName: 'Ramzinex', type: 'P2P', logoColor: '#ea580c', buyPrice: base - 900, sellPrice: base - 400, status: 'online', tradeUrl: 'https://ramzinex.com/exchange/order-book/usdt-irr' },
+        { id: 'exir', name: 'اکسیر', enName: 'Exir', type: 'P2P', logoColor: '#2563eb', buyPrice: base - 350, sellPrice: base + 350, status: 'online', tradeUrl: 'https://exir.io/trading/usdt-irt' },
+        { id: 'sarmayex', name: 'سرمایکس', enName: 'Sarmayex', type: 'OTC', logoColor: '#d97706', buyPrice: base - 1800, sellPrice: base + 2200, status: 'online', tradeUrl: 'https://sarmayex.com/easy-exchange' },
+        { id: 'bit24', name: 'بیت ۲۴', enName: 'Bit24', type: 'OTC', logoColor: '#e11d48', buyPrice: base + 180, sellPrice: base + 380, status: 'online', tradeUrl: 'https://bit24.cash' },
+        { id: 'arzpaya', name: 'ارزپایا', enName: 'ArzPaya', type: 'P2P', logoColor: '#4f46e5', buyPrice: base - 150, sellPrice: base + 120, status: 'online', tradeUrl: 'https://arzpaya.com' },
+        { id: 'arzinja', name: 'ارزینجا', enName: 'Arzinja', type: 'OTC', logoColor: '#0d9488', buyPrice: base + 220, sellPrice: base + 420, status: 'online', tradeUrl: 'https://arzinja.info' },
+        { id: 'raastin', name: 'راستین', enName: 'Raastin', type: 'P2P', logoColor: '#6366f1', buyPrice: base - 50, sellPrice: base + 190, status: 'online', tradeUrl: 'https://raastin.com' },
+        { id: 'rabex', name: 'رابکس', enName: 'Rabex', type: 'OTC', logoColor: '#9333ea', buyPrice: base + 80, sellPrice: base + 310, status: 'online', tradeUrl: 'https://rabex.ir' },
       ];
       updateSummaryMetrics();
       render();
@@ -1137,36 +1802,59 @@
 
       const bestBuy = [...active].sort((a, b) => b.buyPrice - a.buyPrice)[0];
       const bestSell = [...active].filter(e => e.sellPrice > 0).sort((a, b) => a.sellPrice - b.sellPrice)[0];
+      const lowestBuy = [...active].sort((a, b) => a.buyPrice - b.buyPrice)[0];
       const avg = Math.round(active.reduce((acc, curr) => acc + curr.buyPrice, 0) / active.length);
 
       if (bestBuy) {
         topBuyPriceEl.innerHTML = `<span>${formatToman(bestBuy.buyPrice)}</span><span class="highlight-unit">تومان</span>`;
         topBuyExchangeEl.textContent = `صرافی: ${bestBuy.name}`;
+        const buyDiff = bestBuy.buyPrice - avg;
+        topBuyDiffTag.textContent = `+${formatToman(buyDiff)} ت بالاتر از میانگین`;
       }
       if (bestSell) {
         topSellPriceEl.innerHTML = `<span>${formatToman(bestSell.sellPrice)}</span><span class="highlight-unit">تومان</span>`;
         topSellExchangeEl.textContent = `صرافی: ${bestSell.name}`;
+        const sellDiff = avg - bestSell.sellPrice;
+        topSellDiffTag.textContent = `-${formatToman(sellDiff)} ت ارزان‌تر از میانگین`;
       }
       avgMarketPriceEl.innerHTML = `<span>${formatToman(avg)}</span><span class="highlight-unit">تومان</span>`;
       lastUpdatedClockEl.textContent = 'آخرین سنجش: ' + new Date().toLocaleTimeString('fa-IR');
       if (totalExchangesCountEl) totalExchangesCountEl.textContent = `${active.length} صرافی معتبر`;
 
-      if (bestBuy && bestSell && marketSpreadNoticeEl) {
+      if (bestBuy && bestSell) {
         const bestGap = bestBuy.buyPrice - bestSell.sellPrice;
-        if (bestGap > 0) {
-          marketSpreadNoticeEl.innerHTML = `سود خالص آربیتراژ بازار: <strong style="color:#059669;">${formatToman(bestGap)} تومان بر هر تتر</strong>`;
-        } else {
-          marketSpreadNoticeEl.innerHTML = `اسپرد بهترین خریدار/فروشنده: <strong>${formatToman(Math.abs(bestGap))} تومان</strong>`;
+        if (topArbitrageSpreadEl) {
+          topArbitrageSpreadEl.innerHTML = `<span>${bestGap > 0 ? '+' : ''}${formatToman(bestGap)}</span><span class="highlight-unit">تومان</span>`;
+        }
+        if (arbitragePairTextEl) {
+          arbitragePairTextEl.textContent = `خرید از ${bestSell.name}، فروش به ${bestBuy.name}`;
+        }
+        if (arbitragePotentialTextEl) {
+          if (bestGap > 0) {
+            arbitragePotentialTextEl.innerHTML = `<span style="color:#059669; font-weight:800;">+${formatToman(bestGap)} ت سود در هر تتر</span> (از ${bestSell.name} به ${bestBuy.name})`;
+          } else {
+            arbitragePotentialTextEl.innerHTML = `<span>${formatToman(Math.abs(bestGap))} تومان اسپرد بازار</span>`;
+          }
         }
       }
 
       const amount = parseFloat(tetherAmountInput.value) || 0;
       if (currentIntent === 'sell') {
         const rate = bestBuy ? bestBuy.buyPrice : 267000;
-        calcSummary.innerHTML = `با فروش ${faNumber.format(amount)} تتر در <strong>${bestBuy?.name || 'بهترین صرافی'}</strong> مبلغ <span class="calc-highlight">${formatToman(amount * rate)} تومان</span> دریافت می‌کنید.`;
+        const total = amount * rate;
+        const worstRate = lowestBuy ? lowestBuy.buyPrice : rate - 1000;
+        const diffProfit = amount * (rate - worstRate);
+
+        calcSummary.innerHTML = `
+          <div>با فروش ${faNumber.format(amount)} تتر در <strong>${bestBuy?.name || 'بهترین صرافی'}</strong> مبلغ <span class="calc-highlight">${formatToman(total)} تومان</span> دریافت می‌کنید.</div>
+          ${diffProfit > 0 ? `<div style="font-size:12px; color:var(--brand-teal); font-weight:800;">(سود مقایسه در صرافی‌سنج: +${formatToman(diffProfit)} تومان نسبت به ضعیف‌ترین صرافی)</div>` : ''}
+        `;
       } else {
         const rate = bestSell ? bestSell.sellPrice : 267200;
-        calcSummary.innerHTML = `برای خرید ${faNumber.format(amount)} تتر از <strong>${bestSell?.name || 'ارزان‌ترین صرافی'}</strong> مبلغ <span class="calc-highlight">${formatToman(amount * rate)} تومان</span> نیاز دارید.`;
+        const total = amount * rate;
+        calcSummary.innerHTML = `
+          <div>برای خرید ${faNumber.format(amount)} تتر از <strong>${bestSell?.name || 'ارزان‌ترین صرافی'}</strong> مبلغ <span class="calc-highlight" style="color:var(--color-sell);">${formatToman(total)} تومان</span> نیاز دارید.</div>
+        `;
       }
     }
 
@@ -1191,14 +1879,26 @@
         return b.buyPrice - a.buyPrice;
       });
 
+      // تنظیم سرستون فعال
+      if (currentIntent === 'sell') {
+        thBuyCol.classList.add('col-active');
+        thSellCol.classList.remove('col-active');
+      } else {
+        thSellCol.classList.add('col-active');
+        thBuyCol.classList.remove('col-active');
+      }
+
       let tableHtml = '';
       let cardsHtml = '';
 
-      list.forEach(ex => {
+      list.forEach((ex, idx) => {
         const isBestBuy = ex.buyPrice === maxBuyPrice && ex.buyPrice > 0;
         const isBestSell = ex.sellPrice === minSellPrice && ex.sellPrice > 0;
         const spread = ex.sellPrice && ex.buyPrice ? Math.abs(ex.sellPrice - ex.buyPrice) : 0;
         const initial = ex.enName ? ex.enName.charAt(0) : ex.name.charAt(0);
+        const rank = idx + 1;
+        const rankClass = rank === 1 ? 'rank-top-1' : rank === 2 ? 'rank-top-2' : rank === 3 ? 'rank-top-3' : '';
+        const exType = ex.type || (ex.id === 'tetherland' || ex.id === 'sarmayex' || ex.id === 'bit24' || ex.id === 'arzinja' || ex.id === 'rabex' ? 'OTC' : 'P2P');
 
         let badges = '';
         if (isBestBuy) badges += `<span class="badge badge-best-buy">★ رتبه ۱ خرید صرافی</span> `;
@@ -1208,30 +1908,54 @@
           <tr>
             <td>
               <div class="exchange-info">
+                <span class="rank-num ${rankClass}">${faNumber.format(rank)}</span>
                 <div class="exchange-logo" style="background-color: ${ex.logoColor || '#334155'};">${initial}</div>
-                <div><span class="exchange-title">${ex.name}</span><div class="exchange-en">${ex.enName || ''}</div></div>
+                <div class="exchange-title-group">
+                  <span class="exchange-title">
+                    ${ex.name}
+                    <span class="exchange-type-tag">${exType}</span>
+                  </span>
+                  <span class="exchange-en">${ex.enName || ''}</span>
+                </div>
               </div>
             </td>
             <td>
               <div class="price-cell">
-                <span class="price-value" style="${isBestBuy ? 'color: var(--color-emerald-accent);' : ''}">${formatToman(ex.buyPrice)} تومان</span>
+                <span class="price-value ${isBestBuy ? 'highlighted-column-buy' : ''}">
+                  ${formatToman(ex.buyPrice)}
+                  <span style="font-size: 11.5px; color: var(--text-muted); font-weight: 500;">تومان</span>
+                </span>
                 <span class="price-sub">صرافی می‌خرد</span>
               </div>
             </td>
             <td>
               <div class="price-cell">
-                <span class="price-value" style="${isBestSell ? 'color: var(--color-blue-accent);' : ''}">${formatToman(ex.sellPrice)} تومان</span>
+                <span class="price-value ${isBestSell ? 'highlighted-column-sell' : ''}">
+                  ${formatToman(ex.sellPrice)}
+                  <span style="font-size: 11.5px; color: var(--text-muted); font-weight: 500;">تومان</span>
+                </span>
                 <span class="price-sub">صرافی می‌فروشد</span>
               </div>
             </td>
-            <td><span class="badge badge-spread">${formatToman(spread)} تومان</span></td>
             <td>
-              <span class="status-dot-green"></span>
-              <span style="font-size: 12px; font-weight: 700;">پایدار</span>
-              ${badges ? `<div style="margin-top: 4px;">${badges}</div>` : ''}
+              <span class="badge badge-spread ${spread < 300 ? 'low' : ''}">${formatToman(spread)} تومان</span>
             </td>
             <td>
-              <a href="${ex.tradeUrl || '#'}" target="_blank" rel="noopener noreferrer" class="btn btn-sm">ورود به معامله</a>
+              <div style="display: flex; align-items: center; gap: 6px;">
+                <span class="status-dot-green"></span>
+                <span style="font-size: 12.5px; font-weight: 700; color: var(--text-muted);">آنلاین</span>
+              </div>
+              ${badges ? `<div style="margin-top: 6px;">${badges}</div>` : ''}
+            </td>
+            <td style="text-align: center;">
+              <a href="${ex.tradeUrl || '#'}" target="_blank" rel="noopener noreferrer" class="trade-btn">
+                معامله
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                  <polyline points="15 3 21 3 21 9"/>
+                  <line x1="10" y1="14" x2="21" y2="3"/>
+                </svg>
+              </a>
             </td>
           </tr>
         `;
@@ -1240,24 +1964,31 @@
           <div class="m-card">
             <div class="m-card-header">
               <div class="exchange-info">
+                <span class="rank-num ${rankClass}">${faNumber.format(rank)}</span>
                 <div class="exchange-logo" style="background-color: ${ex.logoColor || '#334155'};">${initial}</div>
-                <span class="exchange-title">${ex.name}</span>
+                <div>
+                  <div class="exchange-title">${ex.name} <span class="exchange-type-tag">${exType}</span></div>
+                  <div class="exchange-en">${ex.enName || ''}</div>
+                </div>
               </div>
               <div>${badges}</div>
             </div>
             <div class="m-card-prices">
               <div class="m-price-box ${isBestBuy ? 'highlighted-buy' : ''}">
-                <div style="font-size: 11px; font-weight: 700; color: var(--text-muted);">نرخ خرید صرافی</div>
-                <div style="font-size: 17px; font-weight: 900; font-variant-numeric: tabular-nums;">${formatToman(ex.buyPrice)} تومان</div>
+                <div style="font-size: 11px; font-weight: 700; color: var(--text-muted);">نرخ خرید صرافی (فروش شما)</div>
+                <div style="font-size: 18px; font-weight: 900; font-variant-numeric: tabular-nums; margin-top: 4px;">${formatToman(ex.buyPrice)} <span style="font-size: 11px; font-weight:600;">تومان</span></div>
               </div>
               <div class="m-price-box ${isBestSell ? 'highlighted-sell' : ''}">
-                <div style="font-size: 11px; font-weight: 700; color: var(--text-muted);">نرخ فروش صرافی</div>
-                <div style="font-size: 17px; font-weight: 900; font-variant-numeric: tabular-nums;">${formatToman(ex.sellPrice)} تومان</div>
+                <div style="font-size: 11px; font-weight: 700; color: var(--text-muted);">نرخ فروش صرافی (خرید شما)</div>
+                <div style="font-size: 18px; font-weight: 900; font-variant-numeric: tabular-nums; margin-top: 4px;">${formatToman(ex.sellPrice)} <span style="font-size: 11px; font-weight:600;">تومان</span></div>
               </div>
             </div>
             <div class="m-card-footer">
               <span style="font-size: 12px; font-weight: 700; color: var(--text-muted);">اسپرد: <strong>${formatToman(spread)} تومان</strong></span>
-              <a href="${ex.tradeUrl || '#'}" target="_blank" rel="noopener noreferrer" class="btn btn-sm">صفحه صرافی</a>
+              <a href="${ex.tradeUrl || '#'}" target="_blank" rel="noopener noreferrer" class="trade-btn">
+                معامله در صرافی
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
             </div>
           </div>
         `;

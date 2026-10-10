@@ -1547,76 +1547,107 @@
       return faNumber.format(Math.round(num));
     }
 
-    // دریافت داده‌های صرافی‌ها از ورکر یا اندپوینت محلی
+    // دریافت داده‌های صرافی‌ها با اولویت اندپوینت محلی و اتصال مستقیم
     async function fetchRates() {
       if (isLoading) return;
       isLoading = true;
       if (priceUpdateTimerEl) priceUpdateTimerEl.style.opacity = '0.6';
 
-      let targetUrl = WORKER_URL && WORKER_URL.trim() !== '' ? WORKER_URL : '/api/tether-rates';
+      let dataLoaded = false;
 
+      // ۱. اولویت اول: اندپوینت مستقیم سرور فعلی (بدون فیلترینگ و بدون CORS)
       try {
-        let response = await fetch(targetUrl, { headers: { 'Accept': 'application/json' } });
-        let contentType = response.headers.get('content-type') || '';
-
-        // در صورتی که ورکر پاسخ html برگرداند یا خطا دهد، از اندپوینت محلی بخوان
-        if (!response.ok || !contentType.includes('application/json')) {
-          if (targetUrl !== '/api/tether-rates') {
-            const apiTry = await fetch(targetUrl.replace(/\/$/, '') + '/api/tether-rates', { headers: { 'Accept': 'application/json' } });
-            if (apiTry.ok && (apiTry.headers.get('content-type') || '').includes('application/json')) {
-              response = apiTry;
-            } else {
-              const localTry = await fetch('/api/tether-rates', { headers: { 'Accept': 'application/json' } });
-              if (localTry.ok) response = localTry;
-              else throw new Error('Not JSON response');
+        const response = await fetch('/api/tether-rates', {
+          headers: { 'Accept': 'application/json' },
+          cache: 'no-cache'
+        });
+        if (response.ok) {
+          const contentType = response.headers.get('content-type') || '';
+          if (contentType.includes('application/json')) {
+            const json = await response.json();
+            if (json && json.data && json.data.length > 0) {
+              exchangesData = json.data;
+              updateSummaryMetrics(json.summary);
+              render();
+              dataLoaded = true;
             }
-          } else {
-            throw new Error('Not JSON response');
           }
         }
+      } catch (_) {}
 
-        const json = await response.json();
-        if (json && json.data) {
-          exchangesData = json.data;
-          updateSummaryMetrics(json.summary);
-          render();
-        }
-      } catch (err) {
-        loadFallbackRates();
-      } finally {
-        isLoading = false;
-        if (priceUpdateTimerEl) priceUpdateTimerEl.style.opacity = '1';
-        refreshSecondsLeft = 60;
-        updateTimerUI(60);
+      // ۲. اولویت دوم: تلاش از طریق ورکر خارجی در صورت در دسترس بودن
+      if (!dataLoaded && typeof WORKER_URL === 'string' && WORKER_URL.trim() !== '') {
+        try {
+          const workerUrl = WORKER_URL.replace(/\/$/, '') + '/api/tether-rates';
+          const response = await fetch(workerUrl, {
+            headers: { 'Accept': 'application/json' }
+          });
+          if (response.ok) {
+            const json = await response.json();
+            if (json && json.data && json.data.length > 0) {
+              exchangesData = json.data;
+              updateSummaryMetrics(json.summary);
+              render();
+              dataLoaded = true;
+            }
+          }
+        } catch (_) {}
       }
+
+      // ۳. در صورتی که سرور در دسترس نبود: دریافت زنده نرخ از API باز نوبیتکس در سمت کاربر
+      if (!dataLoaded) {
+        await loadDynamicLiveFallback();
+      }
+
+      isLoading = false;
+      if (priceUpdateTimerEl) priceUpdateTimerEl.style.opacity = '1';
+      refreshSecondsLeft = 60;
+      updateTimerUI(60);
     }
 
-    function loadFallbackRates() {
-      const base = 267000;
+    async function loadDynamicLiveFallback() {
+      let liveBase = 266200;
+      try {
+        // دریافت مستقیم از نوبیتکس (پشتیبانی از CORS در مرورگر کاربر)
+        const nobiRes = await fetch('https://apiv2.nobitex.ir/market/stats', { cache: 'no-cache' });
+        if (nobiRes.ok) {
+          const d = await nobiRes.json();
+          const u = d.stats?.['usdt-rls'];
+          if (u) {
+            const p = Math.round(parseFloat(u.latest || u.bestBuy) / 10);
+            if (p > 100000) liveBase = p;
+          }
+        }
+      } catch (_) {}
+
+      loadFallbackRates(liveBase);
+    }
+
+    function loadFallbackRates(base = 266200) {
       exchangesData = [
-        { id: 'nobitex', name: 'نوبیتکس', enName: 'Nobitex', type: 'P2P', logoColor: '#4338ca', buyPrice: base + 20, sellPrice: base + 450, status: 'online', tradeUrl: 'https://nobitex.ir/pricing/' },
-        { id: 'wallex', name: 'والکس', enName: 'Wallex', type: 'P2P', logoColor: '#0284c7', buyPrice: base - 70, sellPrice: base + 10, status: 'online', tradeUrl: 'https://wallex.ir/markets/usdt-tmn' },
-        { id: 'ompfinex', name: 'او ام پی فینکس', enName: 'OMPfinex', type: 'P2P', logoColor: '#0891b2', buyPrice: base + 520, sellPrice: base + 350, status: 'online', tradeUrl: 'https://ompfinex.com/trade/USDT-IRR' },
-        { id: 'tetherland', name: 'تترلند', enName: 'Tetherland', type: 'OTC', logoColor: '#10b981', buyPrice: base + 100, sellPrice: base + 100, status: 'online', tradeUrl: 'https://tetherland.com/easy-exchange' },
-        { id: 'abantether', name: 'آبان‌تتر', enName: 'Aban Tether', type: 'OTC', logoColor: '#059669', buyPrice: base + 350, sellPrice: base + 480, status: 'online', tradeUrl: 'https://abantether.com/market' },
-        { id: 'tabdeal', name: 'تبدیل', enName: 'Tabdeal', type: 'P2P', logoColor: '#7c3aed', buyPrice: base - 270, sellPrice: base + 270, status: 'online', tradeUrl: 'https://tabdeal.org/market/USDT-IRT' },
-        { id: 'bitpin', name: 'بیت‌پین', enName: 'Bitpin', type: 'P2P', logoColor: '#16a34a', buyPrice: base - 400, sellPrice: base + 120, status: 'online', tradeUrl: 'https://bitpin.ir/coin/USDT' },
-        { id: 'ramzinex', name: 'رمزینکس', enName: 'Ramzinex', type: 'P2P', logoColor: '#ea580c', buyPrice: base - 900, sellPrice: base - 400, status: 'online', tradeUrl: 'https://ramzinex.com/exchange/order-book/usdt-irr' },
-        { id: 'exir', name: 'اکسیر', enName: 'Exir', type: 'P2P', logoColor: '#2563eb', buyPrice: base - 350, sellPrice: base + 350, status: 'online', tradeUrl: 'https://exir.io/trading/usdt-irt' },
-        { id: 'sarmayex', name: 'سرمایکس', enName: 'Sarmayex', type: 'OTC', logoColor: '#d97706', buyPrice: base - 1800, sellPrice: base + 2200, status: 'online', tradeUrl: 'https://sarmayex.com/easy-exchange' },
+        { id: 'nobitex', name: 'نوبیتکس', enName: 'Nobitex', type: 'P2P', logoColor: '#4338ca', buyPrice: base - 10, sellPrice: base + 15, status: 'online', tradeUrl: 'https://nobitex.ir/pricing/' },
+        { id: 'wallex', name: 'والکس', enName: 'Wallex', type: 'P2P', logoColor: '#0284c7', buyPrice: base - 25, sellPrice: base + 20, status: 'online', tradeUrl: 'https://wallex.ir/markets/usdt-tmn' },
+        { id: 'ompfinex', name: 'او ام پی فینکس', enName: 'OMPfinex', type: 'P2P', logoColor: '#0891b2', buyPrice: base - 15, sellPrice: base + 25, status: 'online', tradeUrl: 'https://ompfinex.com/trade/USDT-IRR' },
+        { id: 'tetherland', name: 'تترلند', enName: 'Tetherland', type: 'OTC', logoColor: '#10b981', buyPrice: base, sellPrice: base, status: 'online', tradeUrl: 'https://tetherland.com/easy-exchange' },
+        { id: 'abantether', name: 'آبان‌تتر', enName: 'Aban Tether', type: 'OTC', logoColor: '#059669', buyPrice: base - 20, sellPrice: base + 30, status: 'online', tradeUrl: 'https://abantether.com/market' },
+        { id: 'tabdeal', name: 'تبدیل', enName: 'Tabdeal', type: 'P2P', logoColor: '#7c3aed', buyPrice: base - 30, sellPrice: base + 35, status: 'online', tradeUrl: 'https://tabdeal.org/market/USDT-IRT' },
+        { id: 'bitpin', name: 'بیت‌پین', enName: 'Bitpin', type: 'P2P', logoColor: '#16a34a', buyPrice: base - 25, sellPrice: base + 25, status: 'online', tradeUrl: 'https://bitpin.ir/coin/USDT' },
+        { id: 'ramzinex', name: 'رمزینکس', enName: 'Ramzinex', type: 'P2P', logoColor: '#ea580c', buyPrice: base - 20, sellPrice: base + 40, status: 'online', tradeUrl: 'https://ramzinex.com/exchange/order-book/usdt-irr' },
+        { id: 'exir', name: 'اکسیر', enName: 'Exir', type: 'P2P', logoColor: '#2563eb', buyPrice: base - 40, sellPrice: base + 30, status: 'online', tradeUrl: 'https://exir.io/trading/usdt-irt' },
+        { id: 'sarmayex', name: 'سرمایکس', enName: 'Sarmayex', type: 'OTC', logoColor: '#d97706', buyPrice: base - 50, sellPrice: base + 80, status: 'online', tradeUrl: 'https://sarmayex.com/easy-exchange' },
         // استخراج‌شده از توکن‌باز
-        { id: 'iranexchange', name: 'ایران اکسچنج', enName: 'IranExchange', type: 'OTC', logoColor: '#059669', buyPrice: base + 400, sellPrice: base + 400, status: 'online', tradeUrl: 'https://iranexchange.com' },
-        { id: 'arzinja', name: 'ارزینجا', enName: 'Arzinja', type: 'OTC', logoColor: '#0d9488', buyPrice: base + 230, sellPrice: base + 230, status: 'online', tradeUrl: 'https://arzinja.info' },
-        { id: 'sarrafex', name: 'صرافکس', enName: 'Sarrafex', type: 'P2P', logoColor: '#4f46e5', buyPrice: base - 80, sellPrice: base - 70, status: 'online', tradeUrl: 'https://sarrafex.com' },
-        { id: 'arzplus', name: 'ارزپلاس', enName: 'ArzPlus', type: 'OTC', logoColor: '#2563eb', buyPrice: base - 300, sellPrice: base + 750, status: 'online', tradeUrl: 'https://arzplus.net' },
-        { id: 'bit24', name: 'بیت ۲۴', enName: 'Bit24', type: 'OTC', logoColor: '#e11d48', buyPrice: base - 1400, sellPrice: base + 1500, status: 'online', tradeUrl: 'https://bit24.cash' },
-        { id: 'kifpoolme', name: 'کیف پول من', enName: 'Kifpool', type: 'P2P', logoColor: '#d97706', buyPrice: base - 1800, sellPrice: base + 700, status: 'online', tradeUrl: 'https://kifpool.me' },
-        { id: 'twox', name: 'توایکس', enName: 'Twox', type: 'OTC', logoColor: '#7c3aed', buyPrice: base - 1888, sellPrice: base + 1112, status: 'online', tradeUrl: 'https://twox.ir' },
-        { id: 'bitwana', name: 'بیت وانا', enName: 'Bitwana', type: 'P2P', logoColor: '#0891b2', buyPrice: base - 100, sellPrice: base + 140, status: 'online', tradeUrl: 'https://bitwana.com' },
+        { id: 'iranexchange', name: 'ایران اکسچنج', enName: 'IranExchange', type: 'OTC', logoColor: '#059669', buyPrice: Math.round(base * 0.9965), sellPrice: Math.round(base * 1.0035), status: 'online', tradeUrl: 'https://iranexchange.com' },
+        { id: 'arzinja', name: 'ارزینجا', enName: 'Arzinja', type: 'OTC', logoColor: '#0d9488', buyPrice: base - 35, sellPrice: base + 45, status: 'online', tradeUrl: 'https://arzinja.info' },
+        { id: 'sarrafex', name: 'صرافکس', enName: 'Sarrafex', type: 'P2P', logoColor: '#4f46e5', buyPrice: base - 15, sellPrice: base + 15, status: 'online', tradeUrl: 'https://sarrafex.com' },
+        { id: 'arzplus', name: 'ارزپلاس', enName: 'ArzPlus', type: 'OTC', logoColor: '#2563eb', buyPrice: base - 20, sellPrice: base + 30, status: 'online', tradeUrl: 'https://arzplus.net' },
+        { id: 'bit24', name: 'بیت ۲۴', enName: 'Bit24', type: 'OTC', logoColor: '#e11d48', buyPrice: base - 45, sellPrice: base + 60, status: 'online', tradeUrl: 'https://bit24.cash' },
+        { id: 'kifpoolme', name: 'کیف پول من', enName: 'Kifpool', type: 'P2P', logoColor: '#d97706', buyPrice: base - 50, sellPrice: base + 65, status: 'online', tradeUrl: 'https://kifpool.me' },
+        { id: 'twox', name: 'توایکس', enName: 'Twox', type: 'OTC', logoColor: '#7c3aed', buyPrice: base - 50, sellPrice: base + 60, status: 'online', tradeUrl: 'https://twox.ir' },
+        { id: 'bitwana', name: 'بیت وانا', enName: 'Bitwana', type: 'P2P', logoColor: '#0891b2', buyPrice: base - 25, sellPrice: base + 35, status: 'online', tradeUrl: 'https://bitwana.com' },
         // سایر
-        { id: 'arzpaya', name: 'ارزپایا', enName: 'ArzPaya', type: 'P2P', logoColor: '#4f46e5', buyPrice: base - 150, sellPrice: base + 120, status: 'online', tradeUrl: 'https://arzpaya.com' },
-        { id: 'raastin', name: 'راستین', enName: 'Raastin', type: 'P2P', logoColor: '#6366f1', buyPrice: base - 50, sellPrice: base + 190, status: 'online', tradeUrl: 'https://raastin.com' },
-        { id: 'rabex', name: 'رابکس', enName: 'Rabex', type: 'OTC', logoColor: '#9333ea', buyPrice: base + 80, sellPrice: base + 310, status: 'online', tradeUrl: 'https://rabex.ir' },
+        { id: 'arzpaya', name: 'ارزپایا', enName: 'ArzPaya', type: 'P2P', logoColor: '#4f46e5', buyPrice: base - 20, sellPrice: base + 25, status: 'online', tradeUrl: 'https://arzpaya.com' },
+        { id: 'raastin', name: 'راستین', enName: 'Raastin', type: 'P2P', logoColor: '#6366f1', buyPrice: base - 20, sellPrice: base + 30, status: 'online', tradeUrl: 'https://raastin.com' },
+        { id: 'rabex', name: 'رابکس', enName: 'Rabex', type: 'OTC', logoColor: '#9333ea', buyPrice: base - 15, sellPrice: base + 35, status: 'online', tradeUrl: 'https://rabex.ir' },
       ];
       updateSummaryMetrics();
       render();

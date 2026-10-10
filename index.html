@@ -534,126 +534,7 @@
       border: 1px solid var(--color-arbitrage-border);
     }
 
-    /* -------------------------------------------------------------
-       ماشین‌حساب هوشمند و شبیه‌ساز سود معامله (Smart Calculator)
-       ------------------------------------------------------------- */
-    .calculator-panel {
-      background: var(--surface-color);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-md);
-      padding: 18px 22px;
-      margin-bottom: 22px;
-      box-shadow: var(--shadow-sm);
-    }
 
-    .calc-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 14px;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .calc-title {
-      font-size: 15px;
-      font-weight: 800;
-      color: var(--text-main);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .calc-body {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .calc-inputs-group {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .calc-input-wrap {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .calc-input {
-      font-family: var(--font-family);
-      width: 140px;
-      padding: 9px 12px;
-      font-size: 16px;
-      font-weight: 900;
-      border-radius: var(--radius-sm);
-      border: 1px solid var(--border-strong);
-      background: var(--bg-subtle);
-      color: var(--text-main);
-      text-align: center;
-      outline: none;
-      transition: border-color 0.15s ease, background 0.15s ease;
-      font-variant-numeric: tabular-nums;
-    }
-
-    .calc-input:focus {
-      border-color: var(--brand-teal);
-      background: var(--surface-color);
-      box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.15);
-    }
-
-    .calc-chips {
-      display: flex;
-      gap: 6px;
-      flex-wrap: wrap;
-    }
-
-    .chip-btn {
-      font-family: var(--font-family);
-      font-size: 12px;
-      font-weight: 700;
-      padding: 5px 10px;
-      border-radius: var(--radius-xs);
-      background: var(--bg-subtle);
-      border: 1px solid var(--border-color);
-      color: var(--text-muted);
-      cursor: pointer;
-      transition: all 0.15s ease;
-    }
-
-    .chip-btn:hover {
-      background: var(--surface-elevated);
-      color: var(--text-main);
-      border-color: var(--border-strong);
-    }
-
-    .calc-result-box {
-      background: var(--bg-subtle);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-sm);
-      padding: 10px 16px;
-      font-size: 13.5px;
-      font-weight: 600;
-      color: var(--text-body);
-      flex: 1;
-      min-width: 280px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .calc-highlight {
-      font-size: 16px;
-      font-weight: 900;
-      color: var(--color-buy);
-      font-variant-numeric: tabular-nums;
-      margin: 0 4px;
-    }
 
     /* -------------------------------------------------------------
        نوار قصد معامله، فیلترها و مرتب‌سازی (Control Bar)
@@ -1350,34 +1231,7 @@
       </div>
     </section>
 
-    <!-- پنل ماشین‌حساب سریع و شبیه‌ساز سود -->
-    <section class="calculator-panel">
-      <div class="calc-header">
-        <div class="calc-title">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="16" y1="14" x2="16" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg>
-          <span>ماشین‌حساب هوشمند تبدیل و محاسبه بیشترین بازدهی ریالی</span>
-        </div>
-        <div class="calc-chips">
-          <button class="chip-btn" data-val="100">۱۰۰ تتر</button>
-          <button class="chip-btn" data-val="500">۵۰۰ تتر</button>
-          <button class="chip-btn" data-val="1000">۱,۰۰۰ تتر</button>
-          <button class="chip-btn" data-val="5000">۵,۰۰۰ تتر</button>
-          <button class="chip-btn" data-val="10000">۱۰,۰۰۰ تتر</button>
-        </div>
-      </div>
-      <div class="calc-body">
-        <div class="calc-inputs-group">
-          <div class="calc-input-wrap">
-            <span style="font-weight: 700; color: var(--text-muted);">مقدار تتر:</span>
-            <input type="number" id="tetherAmount" class="calc-input" value="1000" min="1" step="10">
-            <span style="font-weight: 800; color: var(--text-main);">USDT</span>
-          </div>
-        </div>
-        <div class="calc-result-box" id="calcSummary">
-          در حال محاسبه بیشترین سود دریافتی با صرافی‌سنج...
-        </div>
-      </div>
-    </section>
+
 
     <!-- نوار قصد معامله، جستجو و مرتب‌سازی -->
     <div class="control-panel">
@@ -1655,8 +1509,6 @@
     const sortSelect = document.getElementById('sortSelect');
     const btnIntentSell = document.getElementById('btnIntentSell');
     const btnIntentBuy = document.getElementById('btnIntentBuy');
-    const tetherAmountInput = document.getElementById('tetherAmount');
-    const calcSummary = document.getElementById('calcSummary');
 
     const topBuyPriceEl = document.getElementById('topBuyPrice');
     const topBuyExchangeEl = document.getElementById('topBuyExchange');
@@ -1707,16 +1559,7 @@
       else enableDarkMode();
     });
 
-    // دکمه‌های سریع مقدار ماشین‌حساب
-    document.querySelectorAll('.chip-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const val = btn.getAttribute('data-val');
-        if (val) {
-          tetherAmountInput.value = val;
-          updateSummaryMetrics();
-        }
-      });
-    });
+
 
     const faNumber = new Intl.NumberFormat('fa-IR');
 
@@ -1836,25 +1679,6 @@
             arbitragePotentialTextEl.innerHTML = `<span>${formatToman(Math.abs(bestGap))} تومان اسپرد بازار</span>`;
           }
         }
-      }
-
-      const amount = parseFloat(tetherAmountInput.value) || 0;
-      if (currentIntent === 'sell') {
-        const rate = bestBuy ? bestBuy.buyPrice : 267000;
-        const total = amount * rate;
-        const worstRate = lowestBuy ? lowestBuy.buyPrice : rate - 1000;
-        const diffProfit = amount * (rate - worstRate);
-
-        calcSummary.innerHTML = `
-          <div>با فروش ${faNumber.format(amount)} تتر در <strong>${bestBuy?.name || 'بهترین صرافی'}</strong> مبلغ <span class="calc-highlight">${formatToman(total)} تومان</span> دریافت می‌کنید.</div>
-          ${diffProfit > 0 ? `<div style="font-size:12px; color:var(--brand-teal); font-weight:800;">(سود مقایسه در صرافی‌سنج: +${formatToman(diffProfit)} تومان نسبت به ضعیف‌ترین صرافی)</div>` : ''}
-        `;
-      } else {
-        const rate = bestSell ? bestSell.sellPrice : 267200;
-        const total = amount * rate;
-        calcSummary.innerHTML = `
-          <div>برای خرید ${faNumber.format(amount)} تتر از <strong>${bestSell?.name || 'ارزان‌ترین صرافی'}</strong> مبلغ <span class="calc-highlight" style="color:var(--color-sell);">${formatToman(total)} تومان</span> نیاز دارید.</div>
-        `;
       }
     }
 
@@ -2037,7 +1861,6 @@
       render();
     });
 
-    tetherAmountInput.addEventListener('input', () => updateSummaryMetrics());
     btnManualRefresh.addEventListener('click', () => fetchRates());
 
     function startCountdown() {

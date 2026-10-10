@@ -18,7 +18,7 @@
   <!-- تگ‌های Open Graph و Twitter Card -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="صرافی‌سنج | رصد و مقایسه لحظه‌ای نرخ تتر در صرافی‌های ایران">
-  <meta property="og:description" content="مرجع هوشمند مقایسه لحظه‌ای قیمت خرید و فروش تتر در صرافی‌های معتبر ایرانی با کش ۲۵ ثانیه‌ای و رتبه‌بندی شفاف.">
+  <meta property="og:description" content="مرجع هوشمند مقایسه لحظه‌ای قیمت خرید و فروش تتر در صرافی‌های معتبر ایرانی با کش ۶۰ ثانیه‌ای و رتبه‌بندی شفاف.">
   <meta property="og:locale" content="fa_IR">
   <meta property="og:site_name" content="صرافی‌سنج (SarafiSanj)">
   <meta name="twitter:card" content="summary_large_image">
@@ -1405,7 +1405,7 @@
         </select>
 
         <div class="refresh-box">
-          <span class="timer-badge" id="timerCount">۳۰</span>
+          <span class="timer-badge" id="timerCount">۶۰</span>
           <button class="btn btn-sm" id="btnManualRefresh" title="بروزرسانی دستی نرخ‌ها">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
             بروزرسانی
@@ -1626,7 +1626,7 @@
     <!-- فوتر اختصاصی صرافی‌سنج -->
     <footer class="footer">
       <p><strong>صرافی‌سنج (SarafiSanj)</strong> — سامانه مرجع سنجش، دیده‌بان و رتبه‌بندی لحظه‌ای صرافی‌های ارز دیجیتال ایران</p>
-      <p style="margin-top: 6px;">پایش هوشمند و بدون سوگیری تجاری نرخ خرید و فروش تتر در ۱۵ صرافی برتر ایرانی با کش ۲۵ ثانیه‌ای کلودفلر</p>
+      <p style="margin-top: 6px;">پایش هوشمند و بدون سوگیری تجاری نرخ خرید و فروش تتر در ۱۵ صرافی برتر ایرانی با کش ۶۰ ثانیه‌ای (۱ دقیقه‌ای) کلودفلر</p>
       <p style="margin-top: 10px; font-size: 12px; color: var(--text-subtle);">سلب مسئولیت: نرخ‌ها صرفاً جهت اطلاع‌رسانی و مقایسه گردآوری شده‌اند. کاربر پیش از معامله شخصاً مسئول بررسی نهایی نرخ و شرایط صرافی مقصد می‌باشد.</p>
     </footer>
 
@@ -1642,7 +1642,7 @@
     let currentIntent = 'sell'; // 'sell' = user sells USDT (sort by highest buyPrice) | 'buy' = user buys USDT (sort by lowest sellPrice)
     let currentSort = 'highest_buy';
     let searchQuery = '';
-    let refreshSecondsLeft = 30;
+    let refreshSecondsLeft = 60;
     let refreshTimer = null;
     let isLoading = false;
 
@@ -1766,7 +1766,7 @@
       } finally {
         isLoading = false;
         btnManualRefresh.disabled = false;
-        refreshSecondsLeft = 30;
+        refreshSecondsLeft = 60;
       }
     }
 
@@ -2045,7 +2045,7 @@
       refreshTimer = setInterval(() => {
         refreshSecondsLeft--;
         if (refreshSecondsLeft <= 0) {
-          refreshSecondsLeft = 30;
+          refreshSecondsLeft = 60;
           fetchRates();
         }
         timerCountEl.textContent = faNumber.format(refreshSecondsLeft);

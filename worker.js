@@ -267,19 +267,27 @@ async function fetchOmpfinex() {
     const res = await fetchWithTimeout('https://api.ompfinex.com/v1/orderbook?id=9');
     if (res.ok) {
       const data = await res.json();
-      const u = data.data?.USDTIRR;
+      const u = data.data?.['USDTIRR'];
       if (u?.bids?.[0] && u?.asks?.[0]) {
-        return {
-          id: 'ompfinex',
-          name: 'او ام پی فینکس',
-          enName: 'OMPfinex',
-          logoColor: '#0891b2',
-          buyPrice: Math.round(parseFloat(u.bids[0].price) / 10),
-          sellPrice: Math.round(parseFloat(u.asks[0].price) / 10),
-          status: 'online',
-          lastUpdate: 'لحظه‌ای',
-          tradeUrl: 'https://ompfinex.com/trade/USDT-IRR',
-        };
+        const highestBid = Math.round(parseFloat(u.asks[0].price) / 10);
+        const lowestAsk = Math.round(parseFloat(u.bids[0].price) / 10);
+        const buyPrice = Math.min(highestBid, lowestAsk);
+        const sellPrice = Math.max(highestBid, lowestAsk);
+        if (buyPrice > 100000) {
+          return {
+            id: 'ompfinex',
+            name: 'او ام پی فینکس',
+            enName: 'OMPfinex',
+            type: 'P2P',
+            logoColor: '#0891b2',
+            buyPrice,
+            sellPrice,
+            status: 'online',
+            lastUpdate: 'لحظه‌ای',
+            tradeUrl: 'https://ompfinex.com/trade/USDT-IRR',
+            source: 'direct_api',
+          };
+        }
       }
     }
   } catch (_) {}
@@ -295,17 +303,21 @@ async function fetchTetherland() {
       const u = data.data?.currencies?.USDT;
       if (u) {
         const p = Math.round(parseFloat(u.buy_price || u.price || 0));
-        return {
-          id: 'tetherland',
-          name: 'تترلند',
-          enName: 'Tetherland',
-          logoColor: '#10b981',
-          buyPrice: p,
-          sellPrice: Math.round(parseFloat(u.sell_price || p)),
-          status: 'online',
-          lastUpdate: 'لحظه‌ای',
-          tradeUrl: 'https://tetherland.com/easy-exchange',
-        };
+        if (p > 100000) {
+          return {
+            id: 'tetherland',
+            name: 'تترلند',
+            enName: 'Tetherland',
+            type: 'OTC',
+            logoColor: '#10b981',
+            buyPrice: p,
+            sellPrice: Math.round(parseFloat(u.sell_price || p)),
+            status: 'online',
+            lastUpdate: 'لحظه‌ای',
+            tradeUrl: 'https://tetherland.com/easy-exchange',
+            source: 'direct_api',
+          };
+        }
       }
     }
   } catch (_) {}
@@ -315,25 +327,32 @@ async function fetchTetherland() {
 // ۵. تبدیل (Tabdeal)
 async function fetchTabdeal() {
   try {
-    const res = await fetchWithTimeout('https://api.tabdeal.org/r/plots/currency_prices');
+    const res = await fetchWithTimeout('https://api.tabdeal.org/r/plots/currency_prices', { redirect: 'follow' });
     if (res.ok) {
       const data = await res.json();
       const list = Array.isArray(data) ? data : Object.values(data);
       const usdt = list.find(x => x.symbol === 'USDT');
       const m = usdt?.markets?.find(x => x.symbol === 'USDT_IRT');
       if (m) {
-        const price = parseFloat(m.market_last_trade_price || m.price || m.last_trade_price);
-        return {
-          id: 'tabdeal',
-          name: 'تبدیل',
-          enName: 'Tabdeal',
-          logoColor: '#7c3aed',
-          buyPrice: Math.round(price * 0.999),
-          sellPrice: Math.round(price * 1.001),
-          status: 'online',
-          lastUpdate: 'لحظه‌ای',
-          tradeUrl: 'https://tabdeal.org/market/USDT-IRT',
-        };
+        const lastTrade = parseInt(m.last_trade_price, 10);
+        const marketTrade = parseInt(m.market_last_trade_price || m.price, 10);
+        const buyPrice = Math.min(lastTrade, marketTrade);
+        const sellPrice = Math.max(lastTrade, marketTrade);
+        if (buyPrice > 100000) {
+          return {
+            id: 'tabdeal',
+            name: 'تبدیل',
+            enName: 'Tabdeal',
+            type: 'P2P',
+            logoColor: '#7c3aed',
+            buyPrice,
+            sellPrice,
+            status: 'online',
+            lastUpdate: 'لحظه‌ای',
+            tradeUrl: 'https://tabdeal.org/market/USDT-IRT',
+            source: 'direct_api',
+          };
+        }
       }
     }
   } catch (_) {}
@@ -347,17 +366,23 @@ async function fetchRamzinex() {
     if (res.ok) {
       const data = await res.json();
       if (data.data?.buy && data.data?.sell) {
-        return {
-          id: 'ramzinex',
-          name: 'رمزینکس',
-          enName: 'Ramzinex',
-          logoColor: '#ea580c',
-          buyPrice: Math.round(parseFloat(data.data.buy) / 10),
-          sellPrice: Math.round(parseFloat(data.data.sell) / 10),
-          status: 'online',
-          lastUpdate: 'لحظه‌ای',
-          tradeUrl: 'https://ramzinex.com/exchange/order-book/usdt-irr',
-        };
+        const buyPrice = Math.round(parseFloat(data.data.buy) / 10);
+        const sellPrice = Math.round(parseFloat(data.data.sell) / 10);
+        if (buyPrice > 100000 && sellPrice >= buyPrice) {
+          return {
+            id: 'ramzinex',
+            name: 'رمزینکس',
+            enName: 'Ramzinex',
+            type: 'P2P',
+            logoColor: '#ea580c',
+            buyPrice,
+            sellPrice,
+            status: 'online',
+            lastUpdate: 'لحظه‌ای',
+            tradeUrl: 'https://ramzinex.com/exchange/order-book/usdt-irr',
+            source: 'direct_api',
+          };
+        }
       }
     }
   } catch (_) {}
@@ -372,18 +397,22 @@ async function fetchBitpin() {
       const data = await res.json();
       const u = data.results?.find(x => x.code === 'USDT_IRT');
       if (u) {
-        const price = parseFloat(u.price);
-        return {
-          id: 'bitpin',
-          name: 'بیت‌پین',
-          enName: 'Bitpin',
-          logoColor: '#16a34a',
-          buyPrice: Math.round(price * 0.999),
-          sellPrice: Math.round(price * 1.001),
-          status: 'online',
-          lastUpdate: 'لحظه‌ای',
-          tradeUrl: 'https://bitpin.ir/coin/USDT',
-        };
+        const price = Math.round(parseFloat(u.price));
+        if (price > 100000) {
+          return {
+            id: 'bitpin',
+            name: 'بیت‌پین',
+            enName: 'Bitpin',
+            type: 'P2P',
+            logoColor: '#16a34a',
+            buyPrice: price - 25,
+            sellPrice: price + 25,
+            status: 'online',
+            lastUpdate: 'لحظه‌ای',
+            tradeUrl: 'https://bitpin.ir/coin/USDT',
+            source: 'direct_api',
+          };
+        }
       }
     }
   } catch (_) {}
@@ -398,17 +427,23 @@ async function fetchExir() {
       const data = await res.json();
       const u = data['usdt-irt'];
       if (u?.bids?.[0] && u?.asks?.[0]) {
-        return {
-          id: 'exir',
-          name: 'اکسیر',
-          enName: 'Exir',
-          logoColor: '#2563eb',
-          buyPrice: Math.round(parseFloat(u.bids[0][0])),
-          sellPrice: Math.round(parseFloat(u.asks[0][0])),
-          status: 'online',
-          lastUpdate: 'لحظه‌ای',
-          tradeUrl: 'https://exir.io/trading/usdt-irt',
-        };
+        const buyPrice = Math.round(parseFloat(u.bids[0][0]));
+        const sellPrice = Math.round(parseFloat(u.asks[0][0]));
+        if (buyPrice > 100000 && sellPrice >= buyPrice) {
+          return {
+            id: 'exir',
+            name: 'اکسیر',
+            enName: 'Exir',
+            type: 'P2P',
+            logoColor: '#2563eb',
+            buyPrice,
+            sellPrice,
+            status: 'online',
+            lastUpdate: 'لحظه‌ای',
+            tradeUrl: 'https://exir.io/trading/usdt-irt',
+            source: 'direct_api',
+          };
+        }
       }
     }
   } catch (_) {}
@@ -422,21 +457,24 @@ async function fetchSarmayex() {
     if (res.ok) {
       const data = await res.json();
       const u = data.data?.currencies?.find(x => x.symbol === 'USDT');
-      if (u) {
-        const buy = parseInt(u.buy_price.replace(/,/g, ''), 10);
-        const sell = parseInt(u.sell_price.replace(/,/g, ''), 10);
-        return {
-          id: 'sarmayex',
-          name: 'سرمایکس',
-          enName: 'Sarmayex',
-          type: 'OTC',
-          logoColor: '#d97706',
-          buyPrice: buy,
-          sellPrice: sell,
-          status: 'online',
-          lastUpdate: 'لحظه‌ای',
-          tradeUrl: 'https://sarmayex.com/easy-exchange',
-        };
+      if (u?.buy_price && u?.sell_price) {
+        const buy = parseInt(String(u.buy_price).replace(/,/g, ''), 10);
+        const sell = parseInt(String(u.sell_price).replace(/,/g, ''), 10);
+        if (buy > 100000 && sell >= buy) {
+          return {
+            id: 'sarmayex',
+            name: 'سرمایکس',
+            enName: 'Sarmayex',
+            type: 'OTC',
+            logoColor: '#d97706',
+            buyPrice: buy,
+            sellPrice: sell,
+            status: 'online',
+            lastUpdate: 'لحظه‌ای',
+            tradeUrl: 'https://sarmayex.com/easy-exchange',
+            source: 'direct_api',
+          };
+        }
       }
     }
   } catch (_) {}

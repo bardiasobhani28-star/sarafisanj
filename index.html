@@ -345,33 +345,109 @@
     .btn:active { transform: scale(0.98); }
     .btn-sm { padding: 7px 13px; font-size: 12.5px; }
 
-    .live-status-pill {
+    /* دکمه درخواست ثبت صرافی */
+    .btn-register {
+      background: linear-gradient(135deg, rgba(13, 148, 136, 0.12), rgba(16, 185, 129, 0.12));
+      border: 1px solid rgba(13, 148, 136, 0.35);
+      color: var(--brand-teal-dark);
+      font-weight: 700;
+    }
+    body.dark-theme .btn-register {
+      background: linear-gradient(135deg, rgba(13, 148, 136, 0.22), rgba(16, 185, 129, 0.18));
+      border-color: rgba(45, 212, 191, 0.4);
+      color: #5eead4;
+    }
+    .btn-register:hover {
+      background: linear-gradient(135deg, rgba(13, 148, 136, 0.22), rgba(16, 185, 129, 0.24));
+      border-color: var(--brand-teal);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(13, 148, 136, 0.2);
+    }
+
+    /* دکمه کانال تلگرام */
+    .btn-telegram {
+      background: rgba(36, 161, 222, 0.1);
+      border: 1px solid rgba(36, 161, 222, 0.35);
+      color: #0284c7;
+      font-weight: 700;
+    }
+    body.dark-theme .btn-telegram {
+      background: rgba(56, 189, 248, 0.14);
+      border-color: rgba(56, 189, 248, 0.4);
+      color: #38bdf8;
+    }
+    .btn-telegram:hover {
+      background: rgba(36, 161, 222, 0.2);
+      border-color: #0284c7;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.2);
+    }
+
+    .ticker-tg-link {
+      color: var(--text-body);
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+    .ticker-tg-link:hover {
+      color: #0284c7;
+    }
+    body.dark-theme .ticker-tg-link:hover {
+      color: #38bdf8;
+    }
+    .tg-blue {
+      color: #24a1de;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .footer-channels {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+
+    .footer-channel-badge {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      font-size: 12.5px;
-      font-weight: 700;
-      color: var(--text-body);
-      padding: 8px 14px;
-      background: var(--surface-color);
+      padding: 8px 16px;
       border-radius: var(--radius-sm);
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.15s ease;
       border: 1px solid var(--border-color);
+      background: var(--surface-color);
       box-shadow: var(--shadow-xs);
     }
-
-    .live-dot {
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background-color: #10b981;
-      display: inline-block;
-      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
-      animation: pulse-dot 2s infinite ease-in-out;
+    .footer-channel-badge.tg-channel {
+      color: #0284c7;
+      border-color: rgba(36, 161, 222, 0.35);
     }
-
-    @keyframes pulse-dot {
-      0%, 100% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.25); opacity: 0.7; }
+    body.dark-theme .footer-channel-badge.tg-channel {
+      color: #38bdf8;
+      border-color: rgba(56, 189, 248, 0.35);
+    }
+    .footer-channel-badge.tg-channel:hover {
+      background: rgba(36, 161, 222, 0.12);
+      border-color: #24a1de;
+      transform: translateY(-1px);
+    }
+    .footer-channel-badge.tg-admin {
+      color: var(--brand-teal-dark);
+      border-color: rgba(13, 148, 136, 0.35);
+    }
+    body.dark-theme .footer-channel-badge.tg-admin {
+      color: #5eead4;
+      border-color: rgba(45, 212, 191, 0.35);
+    }
+    .footer-channel-badge.tg-admin:hover {
+      background: rgba(13, 148, 136, 0.12);
+      border-color: var(--brand-teal);
+      transform: translateY(-1px);
     }
 
     /* نوار تیکر و اطلاع‌رسانی وضعیت بازار (Market Ticker Bar) */
@@ -866,6 +942,10 @@
         padding: 14px 12px 60px 12px;
       }
 
+      .header-top {
+        gap: 12px;
+      }
+
       .brand-title {
         font-size: 19px;
       }
@@ -879,14 +959,37 @@
         height: 44px;
       }
 
-      .header-actions .live-status-pill {
-        display: none;
+      .header-actions {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .header-actions .btn {
+        flex: 1 1 calc(50% - 4px);
+        font-size: 11.5px;
+        padding: 7px 8px;
+        justify-content: center;
+      }
+
+      .header-actions #btnThemeToggle {
+        flex: 1 1 100%;
       }
 
       .market-ticker-bar {
         padding: 10px 12px;
         gap: 8px;
         font-size: 11.5px;
+      }
+
+      .footer-channels {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .footer-channel-badge {
+        justify-content: center;
       }
     }
 
@@ -1050,10 +1153,22 @@
         </div>
 
         <div class="header-actions">
-          <div class="live-status-pill">
-            <span class="live-dot" id="liveDot"></span>
-            <span id="networkStatusText">بروزرسانی زنده صرافی‌ها</span>
-          </div>
+          <a href="https://t.me/sarafisanj" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-telegram" title="عضویت در کانال تلگرام نرخ‌های لحظه‌ای تتر">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 0 0-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.37.75-.56 2.94-1.28 4.91-2.12 5.9-2.54 2.81-1.17 3.39-1.37 3.77-1.38.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06-.02.19-.04.38z"/>
+            </svg>
+            <span>کانال تلگرام نرخ‌ها</span>
+          </a>
+
+          <a href="https://t.me/sarafisanj_admin" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-register" title="درخواست ثبت صرافی در سامانه صرافی‌سنج">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <line x1="19" y1="8" x2="19" y2="14"/>
+              <line x1="22" y1="11" x2="16" y2="11"/>
+            </svg>
+            <span>درخواست ثبت صرافی</span>
+          </a>
 
           <button class="btn btn-sm" id="btnThemeToggle" title="تغییر تم تاریک / روشن">
             <svg id="themeIconMoon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3">
@@ -1089,12 +1204,12 @@
           </span>
           <span id="lastUpdatedClock">آخرین سنجش: در حال دریافت...</span>
         </div>
-        <div class="ticker-item">
-          <span class="ticker-icon">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <a href="https://t.me/sarafisanj" target="_blank" rel="noopener noreferrer" class="ticker-item ticker-tg-link" title="کانال تلگرام ثبت نرخ‌های صرافی‌سنج">
+          <span class="ticker-icon tg-blue">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 0 0-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.37.75-.56 2.94-1.28 4.91-2.12 5.9-2.54 2.81-1.17 3.39-1.37 3.77-1.38.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06-.02.19-.04.38z"/></svg>
           </span>
-          <span>پتانسیل آربیتراژ آنی: <strong id="arbitragePotentialText">در حال محاسبه...</strong></span>
-        </div>
+          <span>کانال تلگرام ثبت نرخ‌ها: <strong dir="ltr">@sarafisanj</strong></span>
+        </a>
       </div>
     </header>
 
@@ -1339,7 +1454,24 @@
 
     <!-- فوتر اختصاصی صرافی‌سنج -->
     <footer class="footer">
-      <p><strong>صرافی‌سنج (SarafiSanj)</strong> — سامانه مرجع سنجش، دیده‌بان و رتبه‌بندی لحظه‌ای صرافی‌های ارز دیجیتال ایران</p>
+      <div class="footer-channels">
+        <a href="https://t.me/sarafisanj" target="_blank" rel="noopener noreferrer" class="footer-channel-badge tg-channel" title="عضویت در کانال تلگرام نرخ‌های لحظه‌ای صرافی‌سنج">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 0 0-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.37.75-.56 2.94-1.28 4.91-2.12 5.9-2.54 2.81-1.17 3.39-1.37 3.77-1.38.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06-.02.19-.04.38z"/>
+          </svg>
+          <span>کانال تلگرام ثبت نرخ‌ها: <strong dir="ltr">@sarafisanj</strong></span>
+        </a>
+        <a href="https://t.me/sarafisanj_admin" target="_blank" rel="noopener noreferrer" class="footer-channel-badge tg-admin" title="درخواست ثبت صرافی و ارتباط با مدیریت">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <line x1="19" y1="8" x2="19" y2="14"/>
+            <line x1="22" y1="11" x2="16" y2="11"/>
+          </svg>
+          <span>درخواست ثبت صرافی: <strong dir="ltr">@sarafisanj_admin</strong></span>
+        </a>
+      </div>
+      <p style="margin-top: 14px;"><strong>صرافی‌سنج (SarafiSanj)</strong> — سامانه مرجع سنجش، دیده‌بان و رتبه‌بندی لحظه‌ای صرافی‌های ارز دیجیتال ایران</p>
       <p style="margin-top: 6px;">پایش هوشمند و بدون سوگیری تجاری نرخ خرید و فروش تتر در ۱۵ صرافی برتر ایرانی با کش ۶۰ ثانیه‌ای (۱ دقیقه‌ای) کلودفلر</p>
       <p style="margin-top: 10px; font-size: 12px; color: var(--text-subtle);">سلب مسئولیت: نرخ‌ها صرفاً جهت اطلاع‌رسانی و مقایسه گردآوری شده‌اند. کاربر پیش از معامله شخصاً مسئول بررسی نهایی نرخ و شرایط صرافی مقصد می‌باشد.</p>
     </footer>
@@ -1368,8 +1500,6 @@
     const sortSelect = document.getElementById('sortSelect');
 
     const lastUpdatedClockEl = document.getElementById('lastUpdatedClock');
-    const liveDotEl = document.getElementById('liveDot');
-    const networkStatusTextEl = document.getElementById('networkStatusText');
     const totalExchangesCountEl = document.getElementById('totalExchangesCount');
     const arbitragePotentialTextEl = document.getElementById('arbitragePotentialText');
 
@@ -1447,8 +1577,6 @@
           exchangesData = json.data;
           updateSummaryMetrics(json.summary);
           render();
-          liveDotEl.style.backgroundColor = '#10b981';
-          networkStatusTextEl.textContent = json.cached ? 'پاسخ سریع (کش صرافی‌سنج)' : 'بروزرسانی زنده صرافی‌ها';
         }
       } catch (err) {
         loadFallbackRates();
@@ -1489,8 +1617,6 @@
       ];
       updateSummaryMetrics();
       render();
-      liveDotEl.style.backgroundColor = '#f59e0b';
-      networkStatusTextEl.textContent = 'داده‌های پشتیبان صرافی‌سنج';
     }
 
     function updateSummaryMetrics(summary) {

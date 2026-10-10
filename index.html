@@ -411,148 +411,6 @@
     }
 
     /* -------------------------------------------------------------
-       کارت‌های چهارگانه تحلیلی بازار (Market Highlight Cards)
-       ------------------------------------------------------------- */
-    .highlight-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-      margin-bottom: 24px;
-    }
-
-    @media (max-width: 1080px) {
-      .highlight-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 600px) {
-      .highlight-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 8px;
-        margin-bottom: 16px;
-      }
-      .highlight-card {
-        padding: 12px 14px;
-      }
-      .highlight-label {
-        font-size: 11px;
-        margin-bottom: 4px;
-      }
-      .highlight-price {
-        font-size: 16.5px;
-      }
-      .highlight-meta {
-        font-size: 10px;
-        margin-top: 6px;
-      }
-    }
-
-    .highlight-card {
-      background: var(--surface-color);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-md);
-      padding: 18px 20px;
-      box-shadow: var(--shadow-sm);
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .highlight-card:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-md);
-      border-color: var(--border-strong);
-    }
-
-    .highlight-card.card-buy {
-      border-top: 4px solid var(--color-buy);
-      background: linear-gradient(180deg, var(--color-buy-bg) 0%, var(--surface-color) 45%);
-    }
-
-    .highlight-card.card-sell {
-      border-top: 4px solid var(--color-sell);
-      background: linear-gradient(180deg, var(--color-sell-bg) 0%, var(--surface-color) 45%);
-    }
-
-    .highlight-card.card-avg {
-      border-top: 4px solid var(--brand-teal);
-      background: linear-gradient(180deg, rgba(13, 148, 136, 0.08) 0%, var(--surface-color) 45%);
-    }
-
-    .highlight-card.card-arbitrage {
-      border-top: 4px solid var(--color-arbitrage);
-      background: linear-gradient(180deg, var(--color-arbitrage-bg) 0%, var(--surface-color) 45%);
-    }
-
-    .highlight-label {
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--text-muted);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 10px;
-    }
-
-    .highlight-price {
-      font-size: 28px;
-      font-weight: 900;
-      color: var(--text-main);
-      display: flex;
-      align-items: baseline;
-      gap: 6px;
-      font-variant-numeric: tabular-nums;
-      line-height: 1.15;
-      margin-bottom: 8px;
-    }
-
-    .highlight-unit { font-size: 13px; font-weight: 600; color: var(--text-muted); }
-    
-    .highlight-meta {
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--text-main);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-top: 1px dashed var(--border-color);
-      padding-top: 10px;
-      margin-top: 6px;
-    }
-
-    .highlight-diff {
-      font-size: 11.5px;
-      font-weight: 800;
-      padding: 3px 8px;
-      border-radius: var(--radius-xs);
-      font-variant-numeric: tabular-nums;
-    }
-
-    .highlight-diff.positive {
-      background: var(--color-buy-bg);
-      color: var(--color-buy);
-      border: 1px solid var(--color-buy-border);
-    }
-
-    .highlight-diff.negative {
-      background: var(--color-sell-bg);
-      color: var(--color-sell);
-      border: 1px solid var(--color-sell-border);
-    }
-
-    .highlight-diff.neutral {
-      background: var(--color-arbitrage-bg);
-      color: var(--color-arbitrage);
-      border: 1px solid var(--color-arbitrage-border);
-    }
-
-
-
-    /* -------------------------------------------------------------
        نوار فیلترها، جستجو، مرتب‌سازی و تایمر خودکار (Control Bar)
        ------------------------------------------------------------- */
     .control-panel {
@@ -1240,83 +1098,6 @@
       </div>
     </header>
 
-    <!-- کارت‌های چهارگانه تحلیلی بازار تتر -->
-    <section class="highlight-grid">
-      <!-- کارت ۱: بهترین نرخ خرید صرافی -->
-      <div class="highlight-card card-buy">
-        <div>
-          <div class="highlight-label">
-            <span>بالاترین قیمت خرید صرافی</span>
-            <span class="badge badge-best-buy">فروش تتر شما</span>
-          </div>
-          <div class="highlight-price" id="topBuyPrice">
-            <span>---</span>
-            <span class="highlight-unit">تومان</span>
-          </div>
-        </div>
-        <div class="highlight-meta">
-          <span id="topBuyExchange">صرافی: در حال سنجش</span>
-          <span class="highlight-diff positive" id="topBuyDiffTag">+-- تومان بالاتر</span>
-        </div>
-      </div>
-
-      <!-- کارت ۲: ارزان‌ترین نرخ فروش صرافی -->
-      <div class="highlight-card card-sell">
-        <div>
-          <div class="highlight-label">
-            <span>ارزان‌ترین قیمت فروش صرافی</span>
-            <span class="badge badge-best-sell">خرید تتر شما</span>
-          </div>
-          <div class="highlight-price" id="topSellPrice">
-            <span>---</span>
-            <span class="highlight-unit">تومان</span>
-          </div>
-        </div>
-        <div class="highlight-meta">
-          <span id="topSellExchange">صرافی: در حال سنجش</span>
-          <span class="highlight-diff negative" id="topSellDiffTag">--- تومان ارزان‌تر</span>
-        </div>
-      </div>
-
-      <!-- کارت ۳: میانگین وزنی بازار تتر -->
-      <div class="highlight-card card-avg">
-        <div>
-          <div class="highlight-label">
-            <span>شاخص میانگین بازار تتر</span>
-            <span style="font-size: 11px; font-weight: 700; color: var(--text-muted);">USDT Index</span>
-          </div>
-          <div class="highlight-price" id="avgMarketPrice">
-            <span>---</span>
-            <span class="highlight-unit">تومان</span>
-          </div>
-        </div>
-        <div class="highlight-meta">
-          <span>مبنای تسویه پایا و OTC</span>
-          <span style="font-size: 11.5px; font-weight: 700; color: var(--brand-teal);">میانگین کل</span>
-        </div>
-      </div>
-
-      <!-- کارت ۴: کمترین اسپرد بازار -->
-      <div class="highlight-card card-arbitrage">
-        <div>
-          <div class="highlight-label">
-            <span>فرصت سود آربیتراژ</span>
-            <span class="highlight-diff neutral">سود خالص خرید و فروش</span>
-          </div>
-          <div class="highlight-price" id="topArbitrageSpread">
-            <span>---</span>
-            <span class="highlight-unit">تومان بر تتر</span>
-          </div>
-        </div>
-        <div class="highlight-meta">
-          <span id="arbitragePairText">بین بهترین خریدار و فروشنده</span>
-          <span style="font-size: 11.5px; font-weight: 700; color: var(--color-arbitrage);">سود بی‌ریسک</span>
-        </div>
-      </div>
-    </section>
-
-
-
     <!-- نوار جستجو، مرتب‌سازی و تایمر خودکار -->
     <div class="control-panel">
       <!-- فیلترها، مرتب‌سازی و تایمر به سبک توکن‌باز -->
@@ -1586,15 +1367,6 @@
     const searchInput = document.getElementById('searchInput');
     const sortSelect = document.getElementById('sortSelect');
 
-    const topBuyPriceEl = document.getElementById('topBuyPrice');
-    const topBuyExchangeEl = document.getElementById('topBuyExchange');
-    const topBuyDiffTag = document.getElementById('topBuyDiffTag');
-    const topSellPriceEl = document.getElementById('topSellPrice');
-    const topSellExchangeEl = document.getElementById('topSellExchange');
-    const topSellDiffTag = document.getElementById('topSellDiffTag');
-    const avgMarketPriceEl = document.getElementById('avgMarketPrice');
-    const topArbitrageSpreadEl = document.getElementById('topArbitrageSpread');
-    const arbitragePairTextEl = document.getElementById('arbitragePairText');
     const lastUpdatedClockEl = document.getElementById('lastUpdatedClock');
     const liveDotEl = document.getElementById('liveDot');
     const networkStatusTextEl = document.getElementById('networkStatusText');
@@ -1728,39 +1500,16 @@
 
       const bestBuy = [...active].sort((a, b) => b.buyPrice - a.buyPrice)[0];
       const bestSell = [...active].filter(e => e.sellPrice > 0).sort((a, b) => a.sellPrice - b.sellPrice)[0];
-      const lowestBuy = [...active].sort((a, b) => a.buyPrice - b.buyPrice)[0];
-      const avg = Math.round(active.reduce((acc, curr) => acc + curr.buyPrice, 0) / active.length);
 
-      if (bestBuy) {
-        topBuyPriceEl.innerHTML = `<span>${formatToman(bestBuy.buyPrice)}</span><span class="highlight-unit">تومان</span>`;
-        topBuyExchangeEl.textContent = `صرافی: ${bestBuy.name}`;
-        const buyDiff = bestBuy.buyPrice - avg;
-        topBuyDiffTag.textContent = `+${formatToman(buyDiff)} ت بالاتر از میانگین`;
-      }
-      if (bestSell) {
-        topSellPriceEl.innerHTML = `<span>${formatToman(bestSell.sellPrice)}</span><span class="highlight-unit">تومان</span>`;
-        topSellExchangeEl.textContent = `صرافی: ${bestSell.name}`;
-        const sellDiff = avg - bestSell.sellPrice;
-        topSellDiffTag.textContent = `-${formatToman(sellDiff)} ت ارزان‌تر از میانگین`;
-      }
-      avgMarketPriceEl.innerHTML = `<span>${formatToman(avg)}</span><span class="highlight-unit">تومان</span>`;
-      lastUpdatedClockEl.textContent = 'آخرین سنجش: ' + new Date().toLocaleTimeString('fa-IR');
+      if (lastUpdatedClockEl) lastUpdatedClockEl.textContent = 'آخرین سنجش: ' + new Date().toLocaleTimeString('fa-IR');
       if (totalExchangesCountEl) totalExchangesCountEl.textContent = `${active.length} صرافی معتبر`;
 
-      if (bestBuy && bestSell) {
+      if (bestBuy && bestSell && arbitragePotentialTextEl) {
         const bestGap = bestBuy.buyPrice - bestSell.sellPrice;
-        if (topArbitrageSpreadEl) {
-          topArbitrageSpreadEl.innerHTML = `<span>${bestGap > 0 ? '+' : ''}${formatToman(bestGap)}</span><span class="highlight-unit">تومان</span>`;
-        }
-        if (arbitragePairTextEl) {
-          arbitragePairTextEl.textContent = `خرید از ${bestSell.name}، فروش به ${bestBuy.name}`;
-        }
-        if (arbitragePotentialTextEl) {
-          if (bestGap > 0) {
-            arbitragePotentialTextEl.innerHTML = `<span style="color:#059669; font-weight:800;">+${formatToman(bestGap)} ت سود در هر تتر</span> (از ${bestSell.name} به ${bestBuy.name})`;
-          } else {
-            arbitragePotentialTextEl.innerHTML = `<span>${formatToman(Math.abs(bestGap))} تومان اسپرد بازار</span>`;
-          }
+        if (bestGap > 0) {
+          arbitragePotentialTextEl.innerHTML = `<span style="color:#059669; font-weight:800;">+${formatToman(bestGap)} ت سود در هر تتر</span> (از ${bestSell.name} به ${bestBuy.name})`;
+        } else {
+          arbitragePotentialTextEl.innerHTML = `<span>${formatToman(Math.abs(bestGap))} تومان اسپرد بازار</span>`;
         }
       }
     }
